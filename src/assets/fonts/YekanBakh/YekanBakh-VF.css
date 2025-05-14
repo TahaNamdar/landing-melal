@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'YekanBakhVF';
+  src:
+    url('./YekanBakhFaNum-VF.woff') format('woff'),
+    url('./YekanBakhFaNum-VF.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'YekanBakhVFEnNum';
+  src:
+    url('./YekanBakh-VF.woff') format('woff'),
+    url('./YekanBakh-VF.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'YekanBakVFFaNum';
+  src:
+          url('./YekanBakhFaNum-VF.woff') format('woff'),
+          url('./YekanBakhFaNum-VF.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: fallback;
+}
