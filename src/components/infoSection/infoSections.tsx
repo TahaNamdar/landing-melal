@@ -31,7 +31,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   linkHref,
   reverse = false,
   maxImageHeight = "400px",
-  content = "",
+  content,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -79,9 +79,16 @@ const InfoSection: React.FC<InfoSectionProps> = ({
         >
           {title}
           {isHovered && (
-            <div className="hidden lg:block">
-              <p className="text-gray-700 text-sm px-6 mt-4">{content}</p>
-            </div>
+            <ul className="hidden lg:block mt-4">
+              {content?.map((item, index) => (
+                <li
+                  key={index}
+                  className="text-gray-800 text-sm text-justify px-6 mt-1 "
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           )}
         </h2>
       </div>
@@ -94,11 +101,17 @@ const InfoSection: React.FC<InfoSectionProps> = ({
         <DrawerHeader>
           <DrawerTitle>{title}</DrawerTitle>
           <DrawerDescription>
-            <div className="text-gray-900 text-sm px-6 mt-4">{content}</div>
+            <ul className="text-gray-900 text-sm px-6 mt-4">
+              {content?.map((item, index) => (
+                <li dir="rtl" key={index} className="mt-2 text-justify">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
-          <Button asChild className="bg-sky-600 text-white">
+          <Button asChild className="bg-sky-600 text-white h-14">
             <a href={linkHref} target="_blank" rel="noopener noreferrer">
               مشاهده سامانه
             </a>
