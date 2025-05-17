@@ -219,14 +219,6 @@ export const LandingPage: React.FC = () => {
             <AnimatedTestimonialSection />
           </div>
         </motion.div>
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <MobileSection />
-        </motion.div> */}
       </div>
       <footer className="pb-6 flex justify-center text-primary">
         Provided By <span className="ml-1  font-semibold">Chogan</span>
