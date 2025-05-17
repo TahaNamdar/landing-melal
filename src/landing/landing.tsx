@@ -60,8 +60,102 @@ export const LandingPage: React.FC = () => {
           </p>
         </div>
 
+        <motion.div
+          className="w-full py-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="relative flex flex-col md:flex-row justify-between items-center">
+              {/* Step 3 */}
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col items-center w-full md:w-1/3"
+              >
+                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  3
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  فصل جدیدی با ملل تریدر
+                </h3>
+                <p className="text-gray-600 text-center text-sm px-4">
+                  کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات
+                  پیشرفته و تجربه‌ای بهتر لذت ببرید.{" "}
+                </p>
+              </motion.div>
+
+              {/* Step 2 */}
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0"
+              >
+                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  2
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  ادامه داستان شما
+                </h3>
+                <p className="text-gray-600 text-center text-sm px-4">
+                  مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای
+                  حرفه‌ای ما استفاده کنید.{" "}
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0"
+              >
+                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  1
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  شروع داستان سرمایه‌گذاری شما
+                </h3>
+                <p className="text-gray-600 text-center text-sm px-4">
+                  با ثبت‌نام غیرحضوری در ملل تریدر، در کمتر از چند دقیقه به
+                  دنیای معاملات حرفه‌ای قدم بگذارید.{" "}
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Info Sections */}
         <div className="flex   2xl:w-[85%] xl:mx-auto  lg:gap-8  2xl:gap-20 flex-wrap lg:flex-nowrap border-b py-10 ">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="lg:flex gap-6   w-full lg:w-1/3 "
+          >
+            <motion.div variants={itemVariants} className="flex-1">
+              <InfoSection
+                reverse
+                imageComponent={
+                  <Suspense
+                    fallback={
+                      <div className="w-full h-64 bg-gray-200 animate-pulse" />
+                    }
+                  >
+                    <LazyInfoImage
+                      src="/Moving.png"
+                      alt="انتقال به ملل تریدر"
+                      className="w-[140px] lg:w-[160px]"
+                    />
+                  </Suspense>
+                }
+                title="انتقال به ملل تریدر"
+                content={[
+                  "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
+                ]}
+                linkHref="https://melaltrader.ir/migration"
+                linkText="انتقال به سامانه"
+              />
+            </motion.div>
+          </motion.div>
           <motion.div
             variants={itemVariants}
             initial="hidden"
@@ -90,40 +184,7 @@ export const LandingPage: React.FC = () => {
               ]}
               linkHref="https://melaltrader.ir"
               linkText="انتقال به سامانه"
-              reverse
             />
-          </motion.div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="lg:flex gap-6   w-full lg:w-1/3 "
-          >
-            <motion.div variants={itemVariants} className="flex-1">
-              <InfoSection
-                imageComponent={
-                  <Suspense
-                    fallback={
-                      <div className="w-full h-64 bg-gray-200 animate-pulse" />
-                    }
-                  >
-                    <LazyInfoImage
-                      src="/Moving.png"
-                      alt="انتقال به ملل تریدر"
-                      className="w-[140px] lg:w-[160px]"
-                    />
-                  </Suspense>
-                }
-                title="انتقال به ملل تریدر"
-                content={[
-                  "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
-                ]}
-                linkHref="https://melaltrader.ir/migration"
-                linkText="انتقال به سامانه"
-              />
-            </motion.div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-full lg:w-1/3">
