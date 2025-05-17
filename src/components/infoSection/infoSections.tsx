@@ -1,6 +1,15 @@
 // import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
 
 interface InfoSectionProps {
   imageSrc?: string;
@@ -25,6 +34,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   content = "",
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const ImageContent = imageComponent || (
     <img
@@ -69,8 +79,8 @@ const InfoSection: React.FC<InfoSectionProps> = ({
         >
           {title}
           {isHovered && (
-            <div>
-              <p className="text-gray-700   text-sm px-6 mt-4">{content}</p>
+            <div className="hidden lg:block">
+              <p className="text-gray-700 text-sm px-6 mt-4">{content}</p>
             </div>
           )}
         </h2>
@@ -78,22 +88,57 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     </div>
   );
 
+  const MobileContent = (
+    <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+      <DrawerContent className="h-[40vh]">
+        <DrawerHeader>
+          <DrawerTitle>{title}</DrawerTitle>
+          <DrawerDescription>
+            <div className="text-gray-900 text-sm px-6 mt-4">{content}</div>
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <Button asChild className="bg-sky-600 text-white">
+            <a href={linkHref} target="_blank" rel="noopener noreferrer">
+              مشاهده سامانه
+            </a>
+          </Button>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (window.innerWidth < 1024) {
+      e.preventDefault();
+      setIsDrawerOpen(true);
+    }
+  };
+
   return (
-    <a href={linkHref} target="_blank" rel="noopener noreferrer">
-      <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className={cn(
-          "shadow-sm bg-white h-[140px] lg:h-[440px] flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 rounded-3xl lg:rounded-[80px] transition-all duration-300 ease-in-out hover:scale-[1.1]",
-          reverse ? "2xl:w-[90%] 2xl:h-[380px] 2xl:mt-10" : ""
-        )}
+    <>
+      <a
+        href={linkHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleClick}
       >
-        <>
-          {!isHovered && ImageSection}
-          {TextSection}
-        </>
-      </div>
-    </a>
+        <div
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className={cn(
+            "shadow-sm bg-white h-[140px] lg:h-[440px] flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 rounded-3xl lg:rounded-[80px] transition-all duration-300 ease-in-out hover:scale-[1.1]",
+            reverse ? "2xl:w-[90%] 2xl:h-[380px] 2xl:mt-10" : ""
+          )}
+        >
+          <>
+            {!isHovered && ImageSection}
+            {TextSection}
+          </>
+        </div>
+      </a>
+      {MobileContent}
+    </>
   );
 };
 
