@@ -53,24 +53,10 @@ export const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            تجربه‌ای متفاوت در دنیای{" "}
-            <motion.span
-              dir="rtl"
-              className="text-primary mr-2"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: 0.3,
-                duration: 0.5,
-                type: "spring",
-                stiffness: 100,
-              }}
-            >
-              معاملات آنلاین !
-            </motion.span>
+            با ملل تریدر به اوج بازار سرمایه برسید!{" "}
           </motion.div>
-          <p className="border-b border-border w-[60%] mx-auto text-center pb-6 2xl:text-3xl font-medium text-primary">
-            محصولات ملل تریدر
+          <p className="border-b border-border w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-primary">
+            داستان موفقیت شما از اینجا آغاز می‌شود: سریع، امن، و حرفه‌ای
           </p>
         </div>
 
@@ -94,16 +80,13 @@ export const LandingPage: React.FC = () => {
                   <LazyInfoImage
                     src="/Analysis.png"
                     alt="ملل تریدر"
-                    className="w-[140px] lg:w-[200px]"
+                    className="w-[140px] lg:w-[140px]"
                   />
                 </Suspense>
               }
-              title="ملل تریدر"
+              title="ورود به سامانه"
               content={[
-                "ثبت انواع سفارش‌های خرید و فروش به صورت لحظه‌ای و با بالاترین سرعت و دقتِ ممکن",
-                "مشاهده‌ی آنی وضعیت دارایی‌ها و ارزش پرتفوی خود در هر لحظه",
-                "دسترسی به گزارش‌های متنوع مالی و معاملاتی با امکان شخصی‌سازی",
-                "همراه با ابزارهای پیشرفته‌ی تحلیلی برای تصمیم‌گیری بهتر.",
+                "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید.",
               ]}
               linkHref="https://melaltrader.ir"
               linkText="انتقال به سامانه"
@@ -129,15 +112,13 @@ export const LandingPage: React.FC = () => {
                     <LazyInfoImage
                       src="/Moving.png"
                       alt="انتقال به ملل تریدر"
-                      className="w-[140px] lg:w-[260px]"
+                      className="w-[140px] lg:w-[160px]"
                     />
                   </Suspense>
                 }
                 title="انتقال به ملل تریدر"
                 content={[
-                  "فرم درخواست انتقال حساب را تکمیل کرده و اطلاعات کارگزاری فعلی خود را وارد نمایید",
-                  "دارایی‌ها و سوابق معاملاتی شما به سیستم ملل تریدر منتقل می‌شود",
-                  "حساب شما در ملل تریدر فعال شده و دسترسی کامل به امکانات آن در اختیار شما قرار خواهد گرفت",
+                  "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
                 ]}
                 linkHref="https://melaltrader.ir/migration"
                 linkText="انتقال به سامانه"
@@ -157,15 +138,15 @@ export const LandingPage: React.FC = () => {
                   <LazyInfoImage
                     src="/login.png"
                     alt="ثبت‌نام غیرحضوری"
-                    className="w-[140px] lg:w-[200px]"
+                    className="w-[140px] lg:w-[140px]"
                   />
                 </Suspense>
               }
-              title="ثبت‌نام غیرحضوری در کارگزاری"
+              title="ثبت‌نام غیرحضوری    "
               content={[
-                "ابتدا شماره موبایل خود را وارد کنید",
-                "با وارد کردن کدِ پیامک‌شده و شماره‌ی ملی‌تان، هویت خود را تأیید کنید",
-                "در ادامه کد معاملاتی شما صادر و به شما اعلام خواهد شد",
+                "فرآیند ثبت‌نام ساده و سریع",
+                "دسترسی به پلتفرم‌های پیشرفته",
+                "پشتیبانی شبانه‌روزی",
               ]}
               linkHref="https://portal.melaltrader.ir/"
               linkText="انتقال به سامانه"

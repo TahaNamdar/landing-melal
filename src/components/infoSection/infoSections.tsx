@@ -66,14 +66,14 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   const TextSection = (
     <div
       dir="rtl"
-      className={`bg-slate p-6 rounded-lg ${
+      className={`bg-slate  rounded-lg ${
         reverse ? "order-first md:order-last" : ""
       }`}
     >
       <div>
         <h2
           className={cn(
-            "text-xl xl:text-2xl text-center mt-4 font-bold mb-8 text-primary",
+            "text-xl xl:text-2xl text-center font-bold mb-8 text-primary",
             isHovered && "text-sky-600 text-xl"
           )}
         >
@@ -140,8 +140,8 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={cn(
-            "shadow-sm bg-white h-[140px] lg:h-[440px] flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 rounded-3xl lg:rounded-[80px] transition-all duration-300 ease-in-out hover:scale-[1.1]",
-            reverse ? "2xl:w-[90%] 2xl:h-[380px] 2xl:mt-10" : ""
+            "shadow-sm bg-white h-[140px] lg:h-[330px] flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 rounded-3xl lg:rounded-[80px] transition-all duration-300 ease-in-out hover:scale-[1.1]",
+            reverse ? "2xl:w-[90%] 2xl:h-[280px] 2xl:mt-10" : ""
           )}
         >
           <>
