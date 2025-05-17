@@ -48,7 +48,7 @@ export const LandingPage: React.FC = () => {
         <div>
           <motion.div
             dir="rtl"
-            className="text-gray-900 break-words   w-[80%] lg:w-full  mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-20"
+            className="text-gray-900 break-words   w-[80%] lg:w-full  mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
