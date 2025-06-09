@@ -37,8 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             ملل تریدر: سفری هوشمند به قله‌های مالی
           </motion.div>
           <p className="border-b border-white/30 w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-white">
-            با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
-            کنید.
+            با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت کنید
           </p>
         </div>
 
