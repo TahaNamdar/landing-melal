@@ -119,7 +119,7 @@ export const LandingPage: React.FC = () => {
                   : "text-white hover:bg-white/20"
               }`}
             >
-              ثبت‌نام غیرحضوری
+              صفحه اصلی
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -131,7 +131,7 @@ export const LandingPage: React.FC = () => {
                   : "text-white hover:bg-white/20"
               }`}
             >
-              ورود به سامانه
+              خدمات ویژه ملل تریدر
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -143,7 +143,7 @@ export const LandingPage: React.FC = () => {
                   : "text-white hover:bg-white/20"
               }`}
             >
-              انتقال به ملل تریدر
+              معرفی محصولات
             </motion.button>
           </div>
         </div>
