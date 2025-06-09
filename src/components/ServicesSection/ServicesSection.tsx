@@ -1,0 +1,163 @@
+import { motion } from "framer-motion";
+import { Suspense, RefObject, lazy } from "react";
+import InfoSection from "@/components/infoSection/infoSections";
+import {
+  containerVariants,
+  itemVariants,
+  sectionVariants,
+} from "../animations/variants";
+
+const LazyInfoImage = lazy(
+  () => import("@/components/LazyInfoImage/LazyInfoImage")
+);
+
+interface ServicesSectionProps {
+  sectionRef: RefObject<HTMLDivElement | null>;
+  scrollToSection: (sectionNumber: number) => void;
+}
+
+export const ServicesSection: React.FC<ServicesSectionProps> = ({
+  sectionRef,
+  scrollToSection,
+}) => {
+  return (
+    <motion.div
+      ref={sectionRef}
+      className="min-h-screen pt-24 flex flex-col justify-center"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          خدمات ویژه ملل تریدر
+        </motion.h2>
+
+        {/* Info Sections */}
+        <div className="flex 2xl:w-[85%] xl:mx-auto lg:gap-8 2xl:gap-20 flex-wrap lg:flex-nowrap border-b py-10">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="lg:flex gap-6 w-full lg:w-1/3"
+          >
+            <motion.div variants={itemVariants} className="flex-1">
+              <InfoSection
+                reverse
+                imageComponent={
+                  <Suspense
+                    fallback={
+                      <div className="w-full h-64 bg-gray-200 animate-pulse" />
+                    }
+                  >
+                    <LazyInfoImage
+                      src="/Moving.png"
+                      alt="انتقال به ملل تریدر"
+                      className="w-[140px] lg:w-[160px]"
+                    />
+                  </Suspense>
+                }
+                title="انتقال به ملل تریدر"
+                content={[
+                  "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
+                ]}
+                linkHref="https://melaltrader.ir/migration"
+                linkText="انتقال به سامانه"
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="w-full lg:w-1/3"
+          >
+            <InfoSection
+              imageComponent={
+                <Suspense
+                  fallback={
+                    <div className="w-full h-64 bg-gray-200 animate-pulse" />
+                  }
+                >
+                  <LazyInfoImage
+                    src="/Analysis.png"
+                    alt="ملل تریدر"
+                    className="w-[140px] lg:w-[140px]"
+                  />
+                </Suspense>
+              }
+              title="ورود به سامانه"
+              content={[
+                "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید.",
+              ]}
+              linkHref="https://melaltrader.ir"
+              linkText="انتقال به سامانه"
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="w-full lg:w-1/3">
+            <InfoSection
+              reverse
+              imageComponent={
+                <Suspense
+                  fallback={
+                    <div className="w-full h-64 bg-gray-200 animate-pulse" />
+                  }
+                >
+                  <LazyInfoImage
+                    src="/login.png"
+                    alt="ثبت‌نام غیرحضوری"
+                    className="w-[140px] lg:w-[140px]"
+                  />
+                </Suspense>
+              }
+              title="ثبت‌نام غیرحضوری    "
+              content={[
+                "فرآیند ثبت‌نام ساده و سریع",
+                "دسترسی به پلتفرم‌های پیشرفته",
+                "پشتیبانی شبانه‌روزی",
+              ]}
+              linkHref="https://portal.melaltrader.ir/"
+              linkText="انتقال به سامانه"
+            />
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="mt-12 flex justify-center"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <button
+            onClick={() => scrollToSection(3)}
+            className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center"
+          >
+            <span>رفتن به بخش بعدی</span>
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
