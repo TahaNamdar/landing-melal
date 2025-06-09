@@ -50,13 +50,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           viewport={{ once: true }}
         >
           <div className="max-w-6xl mx-auto px-4">
-            <div className="relative flex flex-col-reverse md:flex-row justify-between items-center">
+            <div className="relative flex flex-col-reverse md:flex-row justify-between items-center gap-4">
               {/* Step 3 */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col z-30 items-center w-full md:w-1/3"
+                className="flex flex-col z-30 items-center w-full md:w-1/3 border border-white/10 h-[240px] p-10 rounded-4xl cursor-pointer"
               >
-                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                <div className="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   3
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 text-center">
@@ -64,16 +64,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </h3>
                 <p className="text-amber-50 text-center text-sm px-4">
                   کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات
-                  پیشرفته و تجربه‌ای بهتر لذت ببرید.{" "}
+                  پیشرفته و تجربه‌ای بهتر لذت ببرید
                 </p>
               </motion.div>
 
               {/* Step 2 */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0"
+                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0 border border-white/10 h-[240px] p-10 rounded-4xl cursor-pointer"
               >
-                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                <div className="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   2
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 text-center">
@@ -81,15 +81,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </h3>
                 <p className="text-amber-50 text-center text-sm px-4">
                   مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای
-                  حرفه‌ای ما استفاده کنید.{" "}
+                  حرفه‌ای ما استفاده کنید{" "}
                 </p>
               </motion.div>
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0"
+                className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0 border border-white/10 h-[240px] p-10 rounded-4xl cursor-pointer"
               >
-                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+                <div className="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   1
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 text-center">
@@ -97,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </h3>
                 <p className="text-amber-50 text-center text-sm px-4">
                   با ثبت‌نام غیرحضوری در ملل تریدر، در کمتر از چند دقیقه به
-                  دنیای معاملات حرفه‌ای قدم بگذارید.{" "}
+                  دنیای معاملات حرفه‌ای قدم بگذارید
                 </p>
               </motion.div>
             </div>

@@ -40,15 +40,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </motion.h2>
 
         {/* Info Sections */}
-        <div className="flex 2xl:w-[85%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
+        <div className="flex 2xl:w-[80%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="lg:flex  w-full lg:w-1/3"
+            className="lg:flex  w-full lg:w-1/2"
           >
-            <motion.div variants={itemVariants} className="flex-1">
+            <motion.div variants={itemVariants}>
               <InfoSection
                 reverse
                 imageComponent={
@@ -78,7 +78,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="w-full lg:w-1/3"
+            className="w-full lg:w-1/2"
           >
             <InfoSection
               imageComponent={
@@ -103,7 +103,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="w-full lg:w-1/3">
+          <motion.div variants={itemVariants} className="w-full lg:w-1/2">
             <InfoSection
               reverse
               imageComponent={
