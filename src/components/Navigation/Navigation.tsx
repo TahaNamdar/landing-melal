@@ -14,7 +14,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed left-0 text-sm 2xl:text-base right-0 z-50 bg-white/10 mx-auto backdrop-blur-md shadow-lg"
+      className="fixed left-0 text-sm 2xl:text-base right-0 z-50 bg-white/5 mx-auto backdrop-blur-md shadow-lg"
     >
       <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex justify-center space-x-6" dir="rtl">
