@@ -105,7 +105,7 @@ export const LandingPage: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-2 rounded-full left-0 text-sm 2xl:text-base right-0 z-50 bg-sky-600  w-[90%] 2xl:w-[30%] mx-auto backdrop-blur-md shadow-lg "
+        className="fixed left-0 text-sm 2xl:text-base right-0 z-50 bg-white/10  mx-auto backdrop-blur-md shadow-lg "
       >
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex justify-center space-x-6" dir="rtl">
@@ -115,8 +115,8 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(1)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 1
-                  ? "bg-white text-blue-600 font-medium shadow-md"
-                  : "text-white hover:bg-white/20"
+                  ? "  bg-white font-medium shadow-md"
+                  : " hover:bg-white/20"
               }`}
             >
               صفحه اصلی
@@ -127,8 +127,8 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(2)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 2
-                  ? "bg-white text-blue-600 font-medium shadow-md"
-                  : "text-white hover:bg-white/20"
+                  ? "bg-white font-medium shadow-md"
+                  : " hover:bg-white/20"
               }`}
             >
               خدمات ویژه ملل تریدر
@@ -139,8 +139,8 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(3)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 3
-                  ? "bg-white text-blue-600 font-medium shadow-md"
-                  : "text-white hover:bg-white/20"
+                  ? "  bg-white font-medium shadow-md"
+                  : " hover:bg-white/20"
               }`}
             >
               معرفی محصولات
