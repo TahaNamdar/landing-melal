@@ -29,22 +29,13 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen pt-24 flex flex-col justify-center"
+      className="min-h-screen pt-2 flex flex-col justify-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          محصولات و خدمات ملل تریدر
-        </motion.h2>
-
         <motion.div variants={itemVariants}>
           <Carousel
             className="w-full mb-4 rounded-xl overflow-hidden hidden lg:block"
