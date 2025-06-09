@@ -40,13 +40,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </motion.h2>
 
         {/* Info Sections */}
-        <div className="flex 2xl:w-[85%] xl:mx-auto lg:gap-8 2xl:gap-20 flex-wrap lg:flex-nowrap border-b py-10">
+        <div className="flex 2xl:w-[85%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="lg:flex gap-6 w-full lg:w-1/3"
+            className="lg:flex  w-full lg:w-1/3"
           >
             <motion.div variants={itemVariants} className="flex-1">
               <InfoSection

@@ -78,18 +78,17 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           )}
         >
           {title}
-          {isHovered && (
-            <ul className="hidden lg:block mt-4">
-              {content?.map((item, index) => (
-                <li
-                  key={index}
-                  className="text-gray-800 text-sm text-justify px-6 mt-1 "
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
+
+          <ul className="hidden lg:block mt-4">
+            {content?.map((item, index) => (
+              <li
+                key={index}
+                className="text-gray-800 text-sm text-justify px-6 mt-1 "
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </h2>
       </div>
     </div>
@@ -137,15 +136,12 @@ const InfoSection: React.FC<InfoSectionProps> = ({
         onClick={handleClick}
       >
         <div
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           className={cn(
-            "shadow-sm bg-white h-[140px] lg:h-[330px] flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 rounded-3xl lg:rounded-[80px] transition-all duration-300 ease-in-out hover:scale-[1.1]",
-            reverse ? "2xl:w-[90%] 2xl:h-[280px] 2xl:mt-10" : ""
+            "shadow-sm bg-white  flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out hover:scale-[1.01]"
           )}
         >
           <>
-            {!isHovered && ImageSection}
+            {ImageSection}
             {TextSection}
           </>
         </div>
