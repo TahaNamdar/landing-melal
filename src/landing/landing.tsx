@@ -101,42 +101,53 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <nav className="fixed top-2 rounded-xl left-0 text-sm 2xl:text-base right-0 z-50  bg-white/10 w-[90%] 2xl:w-[30%] mx-auto  backdrop-blur-sm shadow-sm ">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex justify-center space-x-8" dir="rtl">
-            <button
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="fixed top-2 rounded-full left-0 text-sm 2xl:text-base right-0 z-50 bg-sky-600  w-[90%] 2xl:w-[30%] mx-auto backdrop-blur-md shadow-lg "
+      >
+        <div className="max-w-6xl mx-auto px-4 py-3">
+          <div className="flex justify-center space-x-6" dir="rtl">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(1)}
-              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 1
-                  ? "bg-sky-600 text-white font-medium"
-                  : "hover:bg-gray-100"
+                  ? "bg-white text-blue-600 font-medium shadow-md"
+                  : "text-white hover:bg-white/20"
               }`}
             >
               ثبت‌نام غیرحضوری
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(2)}
-              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 2
-                  ? "bg-sky-600 text-white font-medium"
-                  : "hover:bg-gray-100"
+                  ? "bg-white text-blue-600 font-medium shadow-md"
+                  : "text-white hover:bg-white/20"
               }`}
             >
               ورود به سامانه
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(3)}
-              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 3
-                  ? "bg-sky-600 text-white font-medium"
-                  : "hover:bg-gray-100"
+                  ? "bg-white text-blue-600 font-medium shadow-md"
+                  : "text-white hover:bg-white/20"
               }`}
             >
               انتقال به ملل تریدر
-            </button>
+            </motion.button>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Section 1 */}
       <motion.div
@@ -489,10 +500,6 @@ export const LandingPage: React.FC = () => {
           </motion.div>
         </div>
       </motion.div>
-
-      <footer className="pb-6 flex justify-center text-primary mt-12">
-        Provided By <span className="ml-1 font-semibold">Chogan</span>
-      </footer>
     </div>
   );
 };
