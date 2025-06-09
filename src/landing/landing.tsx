@@ -101,7 +101,7 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50  bg-white/10 backdrop-blur-sm shadow-sm ">
+      <nav className="fixed top-2 rounded-xl left-0 text-sm 2xl:text-base right-0 z-50  bg-white/10 w-[90%] 2xl:w-[30%] mx-auto  backdrop-blur-sm shadow-sm ">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-center space-x-8" dir="rtl">
             <button
@@ -141,7 +141,7 @@ export const LandingPage: React.FC = () => {
       {/* Section 1 */}
       <motion.div
         ref={section1Ref}
-        className="min-h-screen pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+        className="min-h-[105vh] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -172,7 +172,7 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="max-w-6xl mx-auto px-4">
-              <div className="relative flex flex-col md:flex-row justify-between items-center">
+              <div className="relative flex flex-col-reverse md:flex-row justify-between items-center">
                 {/* Step 3 */}
                 <motion.div
                   variants={itemVariants}
@@ -233,7 +233,7 @@ export const LandingPage: React.FC = () => {
           >
             <button
               onClick={() => scrollToSection(2)}
-              className="px-6 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center"
+              className="px-6 mb-10 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center"
             >
               <span>رفتن به بخش بعدی</span>
               <svg
