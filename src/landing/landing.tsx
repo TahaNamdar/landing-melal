@@ -101,7 +101,7 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50  bg-white/40 backdrop-blur-sm shadow-sm ">
+      <nav className="fixed top-0 left-0 right-0 z-50  bg-white/10 backdrop-blur-sm shadow-sm ">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-center space-x-8" dir="rtl">
             <button
@@ -147,25 +147,25 @@ export const LandingPage: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
+        <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%] relative z-10">
           {/* Header Section */}
           <div>
             <motion.div
               dir="rtl"
-              className="text-gray-900 break-words w-[80%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
+              className="text-white break-words w-[80%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               با ملل تریدر به اوج بازار سرمایه برسید!{" "}
             </motion.div>
-            <p className="border-b border-border w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-primary">
+            <p className="border-b border-white/30 w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-white">
               داستان موفقیت شما از اینجا آغاز می‌شود: سریع، امن، و حرفه‌ای
             </p>
           </div>
 
           <motion.div
-            className="w-full py-12"
+            className="w-full py-12 relative z-20"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -176,15 +176,15 @@ export const LandingPage: React.FC = () => {
                 {/* Step 3 */}
                 <motion.div
                   variants={itemVariants}
-                  className="flex flex-col items-center w-full md:w-1/3"
+                  className="flex flex-col z-30 items-center w-full md:w-1/3"
                 >
                   <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                     3
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  <h3 className="text-xl font-bold text-white mb-2 text-center">
                     فصل جدیدی با ملل تریدر
                   </h3>
-                  <p className="text-gray-600 text-center text-sm px-4">
+                  <p className="text-amber-50 text-center text-sm px-4">
                     کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات
                     پیشرفته و تجربه‌ای بهتر لذت ببرید.{" "}
                   </p>
@@ -198,10 +198,10 @@ export const LandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                     2
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  <h3 className="text-xl font-bold text-white mb-2 text-center">
                     ادامه داستان شما
                   </h3>
-                  <p className="text-gray-600 text-center text-sm px-4">
+                  <p className="text-amber-50 text-center text-sm px-4">
                     مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای
                     حرفه‌ای ما استفاده کنید.{" "}
                   </p>
@@ -214,10 +214,10 @@ export const LandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                     1
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+                  <h3 className="text-xl font-bold text-white mb-2 text-center">
                     شروع داستان سرمایه‌گذاری شما
                   </h3>
-                  <p className="text-gray-600 text-center text-sm px-4">
+                  <p className="text-amber-50 text-center text-sm px-4">
                     با ثبت‌نام غیرحضوری در ملل تریدر، در کمتر از چند دقیقه به
                     دنیای معاملات حرفه‌ای قدم بگذارید.{" "}
                   </p>
