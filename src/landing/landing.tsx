@@ -115,7 +115,7 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(1)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 1
-                  ? "  bg-white font-medium shadow-md"
+                  ? "  font-medium  border text-white"
                   : " hover:bg-white/20"
               }`}
             >
@@ -127,7 +127,7 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(2)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 2
-                  ? "bg-white font-medium shadow-md"
+                  ? " font-medium border"
                   : " hover:bg-white/20"
               }`}
             >
@@ -139,7 +139,7 @@ export const LandingPage: React.FC = () => {
               onClick={() => scrollToSection(3)}
               className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
                 activeSection === 3
-                  ? "  bg-white font-medium shadow-md"
+                  ? "  font-medium border"
                   : " hover:bg-white/20"
               }`}
             >
@@ -168,10 +168,11 @@ export const LandingPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              با ملل تریدر به اوج بازار سرمایه برسید!{" "}
+              ملل تریدر: سفری هوشمند به قله‌های مالی
             </motion.div>
             <p className="border-b border-white/30 w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-white">
-              داستان موفقیت شما از اینجا آغاز می‌شود: سریع، امن، و حرفه‌ای
+              با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
+              کنید.
             </p>
           </div>
 
