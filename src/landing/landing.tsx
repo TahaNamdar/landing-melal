@@ -101,38 +101,38 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-md">
+      <nav className="fixed top-0 left-0 right-0 z-50  bg-white/40 backdrop-blur-sm shadow-sm ">
         <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex justify-center space-x-8">
+          <div className="flex justify-center space-x-8" dir="rtl">
             <button
               onClick={() => scrollToSection(1)}
-              className={`px-3 py-2 rounded-md transition-all ${
+              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
                 activeSection === 1
                   ? "bg-sky-600 text-white font-medium"
                   : "hover:bg-gray-100"
               }`}
             >
-              بخش اول
+              ثبت‌نام غیرحضوری
             </button>
             <button
               onClick={() => scrollToSection(2)}
-              className={`px-3 py-2 rounded-md transition-all ${
+              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
                 activeSection === 2
                   ? "bg-sky-600 text-white font-medium"
                   : "hover:bg-gray-100"
               }`}
             >
-              بخش دوم
+              ورود به سامانه
             </button>
             <button
               onClick={() => scrollToSection(3)}
-              className={`px-3 py-2 rounded-md transition-all ${
+              className={`px-3 py-2 rounded-md transition-all cursor-pointer ${
                 activeSection === 3
                   ? "bg-sky-600 text-white font-medium"
                   : "hover:bg-gray-100"
               }`}
             >
-              بخش سوم
+              انتقال به ملل تریدر
             </button>
           </div>
         </div>
@@ -141,7 +141,7 @@ export const LandingPage: React.FC = () => {
       {/* Section 1 */}
       <motion.div
         ref={section1Ref}
-        className="min-h-screen pt-24 flex flex-col justify-center items-center"
+        className="min-h-screen pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -233,7 +233,7 @@ export const LandingPage: React.FC = () => {
           >
             <button
               onClick={() => scrollToSection(2)}
-              className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center"
+              className="px-6 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center"
             >
               <span>رفتن به بخش بعدی</span>
               <svg
