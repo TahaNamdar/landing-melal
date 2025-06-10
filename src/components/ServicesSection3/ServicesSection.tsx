@@ -26,15 +26,6 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
       viewport={{ once: true }}
     >
       <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-600"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          portal.melaltrader.ir
-        </motion.h2>
-
         {/* Info Sections */}
         <div className="flex 2xl:w-[60%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
           <motion.div variants={itemVariants} className="w-full">

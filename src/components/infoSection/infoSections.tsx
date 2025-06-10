@@ -40,9 +40,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     <img
       src={imageSrc}
       alt={imageAlt}
-      className={`rounded-lg object-cover max-h-[400px] transition-opacity duration-300 ${
-        isHovered ? "opacity-0" : "opacity-100"
-      }`}
+      className={`rounded-lg object-cover max-h-[400px] transition-opacity duration-300`}
       style={{ maxHeight: maxImageHeight }}
       loading="lazy"
     />
@@ -56,9 +54,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     >
       {ImageContent}
       <div
-        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 `}
       ></div>
     </div>
   );
@@ -66,20 +62,15 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   const TextSection = (
     <div
       dir="rtl"
-      className={`bg-slate  rounded-lg ${
+      className={`bg-slate mt-6  rounded-lg ${
         reverse ? "order-first md:order-last" : ""
       }`}
     >
       <div>
-        <h2
-          className={cn(
-            "text-xl xl:text-2xl font-bold mb-8 text-primary",
-            isHovered && "text-sky-600 text-xl"
-          )}
-        >
+        <h2 className={cn("text-xl xl:text-2xl font-bold mb-8 text-primary")}>
           {title}
 
-          <ul className="hidden lg:block mt-4">
+          <ul className=" mt-4">
             {content?.map((item, index) => (
               <li
                 key={index}
@@ -90,6 +81,12 @@ const InfoSection: React.FC<InfoSectionProps> = ({
             ))}
           </ul>
         </h2>
+        <Button
+          className="bg-sky-600 text-white md:h-12 h-10   w-full md:w-[200px] mx-auto cursor-pointer"
+          onClick={() => window.open(linkHref, "_blank")}
+        >
+          مشاهده سامانه
+        </Button>
       </div>
     </div>
   );
@@ -110,34 +107,24 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
-          <Button asChild className="bg-sky-600 text-white h-14">
-            <a href={linkHref} target="_blank" rel="noopener noreferrer">
-              مشاهده سامانه
-            </a>
+          <Button
+            asChild
+            className="bg-sky-600 text-white h-14 w-[40%] mx-auto cursor-pointer"
+            onClick={() => window.open(linkHref, "_blank")}
+          >
+            مشاهده سامانه
           </Button>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (window.innerWidth < 1024) {
-      e.preventDefault();
-      setIsDrawerOpen(true);
-    }
-  };
-
   return (
     <>
-      <a
-        href={linkHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={handleClick}
-      >
+      <div>
         <div
           className={cn(
-            "shadow-sm bg-white  flex justify-around hover:opacity-85 md:flex-row  p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out hover:scale-[1.01]"
+            "shadow-sm bg-white flex-col   md:flex justify-around  md:flex-row  p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out "
           )}
         >
           <>
@@ -145,7 +132,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
             {TextSection}
           </>
         </div>
-      </a>
+      </div>
       {MobileContent}
     </>
   );
