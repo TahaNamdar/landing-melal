@@ -90,7 +90,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
         >
           <button
             onClick={() => scrollToSection(1)}
-            className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center"
+            className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center cursor-pointer animate-bounce"
           >
             <span>بازگشت به بالا</span>
             <svg

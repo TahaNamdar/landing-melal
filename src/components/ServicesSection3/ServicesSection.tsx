@@ -72,7 +72,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
         >
           <button
             onClick={() => scrollToSection(5)}
-            className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center cursor-pointer"
+            className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center cursor-pointer animate-bounce"
           >
             <span>رفتن به بخش بعدی</span>
             <svg

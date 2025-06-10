@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <button
             onClick={() => scrollToSection(2)}
-            className="px-6 mb-10 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center"
+            className="px-6 mb-10 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center animate-bounce"
           >
             <span>رفتن به بخش بعدی</span>
             <svg
