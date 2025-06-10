@@ -31,12 +31,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
     >
       <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          خدمات ویژه ملل تریدر
+          melaltrader.ir/migration
         </motion.h2>
 
         {/* Info Sections */}

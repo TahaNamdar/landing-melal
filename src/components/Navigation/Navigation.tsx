@@ -38,7 +38,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               activeSection === 2 ? "font-medium border" : "hover:bg-white/20"
             }`}
           >
-            خدمات ویژه ملل تریدر
+            انتقال به ملل تریدر
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -48,7 +48,17 @@ export const Navigation: React.FC<NavigationProps> = ({
               activeSection === 3 ? "font-medium border" : "hover:bg-white/20"
             }`}
           >
-            معرفی محصولات
+            ملل تریدر
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection(4)}
+            className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
+              activeSection === 4 ? "font-medium border" : "hover:bg-white/20"
+            }`}
+          >
+            سامانه غیرحضوری
           </motion.button>
         </div>
       </div>
