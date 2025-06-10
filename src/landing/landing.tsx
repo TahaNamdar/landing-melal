@@ -3,11 +3,16 @@ import { Navigation } from "@/components/Navigation/Navigation";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection/ServicesSection";
 import { ProductsSection } from "@/components/ProductsSection/ProductsSection";
+import { ServicesSection2 } from "@/components/ServicesSection2/ServicesSection";
+import { ServicesSection3 } from "@/components/ServicesSection3/ServicesSection";
 
 export const LandingPage: React.FC = () => {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
+  const section4Ref = useRef<HTMLDivElement>(null);
+  const section5Ref = useRef<HTMLDivElement>(null);
+
   const [activeSection, setActiveSection] = useState<number>(0);
 
   const scrollToSection = (sectionNumber: number) => {
@@ -21,6 +26,12 @@ export const LandingPage: React.FC = () => {
         break;
       case 3:
         ref = section3Ref;
+        break;
+      case 4:
+        ref = section4Ref;
+        break;
+      case 5:
+        ref = section5Ref;
         break;
       default:
         ref = section1Ref;
@@ -37,15 +48,20 @@ export const LandingPage: React.FC = () => {
       const position = window.scrollY;
       const section2Position = section2Ref.current?.offsetTop || 0;
       const section3Position = section3Ref.current?.offsetTop || 0;
-
+      const section4Position = section4Ref.current?.offsetTop || 0;
+      const section5Position = section5Ref.current?.offsetTop || 0;
       const offset = 100;
 
       if (position < section2Position - offset) {
         setActiveSection(1);
       } else if (position < section3Position - offset) {
         setActiveSection(2);
-      } else {
+      } else if (position < section4Position - offset) {
         setActiveSection(3);
+      } else if (position < section5Position - offset) {
+        setActiveSection(4);
+      } else {
+        setActiveSection(5);
       }
     };
 
@@ -67,8 +83,18 @@ export const LandingPage: React.FC = () => {
         scrollToSection={scrollToSection}
       />
 
-      <ProductsSection
+      <ServicesSection2
         sectionRef={section3Ref}
+        scrollToSection={scrollToSection}
+      />
+
+      <ServicesSection3
+        sectionRef={section4Ref}
+        scrollToSection={scrollToSection}
+      />
+
+      <ProductsSection
+        sectionRef={section5Ref}
         scrollToSection={scrollToSection}
       />
     </div>

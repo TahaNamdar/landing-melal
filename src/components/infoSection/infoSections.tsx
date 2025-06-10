@@ -73,7 +73,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
       <div>
         <h2
           className={cn(
-            "text-xl xl:text-2xl text-center font-bold mb-8 text-primary",
+            "text-xl xl:text-2xl font-bold mb-8 text-primary",
             isHovered && "text-sky-600 text-xl"
           )}
         >
@@ -83,7 +83,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
             {content?.map((item, index) => (
               <li
                 key={index}
-                className="text-gray-800 text-sm text-justify px-6 mt-1 "
+                className="text-gray-800 text-sm text-justify  mt-1 "
               >
                 {item}
               </li>
@@ -137,7 +137,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
       >
         <div
           className={cn(
-            "shadow-sm bg-white  flex justify-center lg:flex-col hover:opacity-85 md:flex-row gap-6 p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out hover:scale-[1.01]"
+            "shadow-sm bg-white  flex justify-around hover:opacity-85 md:flex-row  p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out hover:scale-[1.01]"
           )}
         >
           <>

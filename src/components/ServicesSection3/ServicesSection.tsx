@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { Suspense, RefObject, lazy } from "react";
 import InfoSection from "@/components/infoSection/infoSections";
-import {
-  containerVariants,
-  itemVariants,
-  sectionVariants,
-} from "../animations/variants";
+import { itemVariants, sectionVariants } from "../animations/variants";
 
 const LazyInfoImage = lazy(
   () => import("@/components/LazyInfoImage/LazyInfoImage")
@@ -16,7 +12,7 @@ interface ServicesSectionProps {
   scrollToSection: (sectionNumber: number) => void;
 }
 
-export const ServicesSection: React.FC<ServicesSectionProps> = ({
+export const ServicesSection3: React.FC<ServicesSectionProps> = ({
   sectionRef,
   scrollToSection,
 }) => {
@@ -41,37 +37,31 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
         {/* Info Sections */}
         <div className="flex 2xl:w-[60%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="w-full"
-          >
-            <motion.div variants={itemVariants}>
-              <InfoSection
-                reverse
-                imageComponent={
-                  <Suspense
-                    fallback={
-                      <div className="w-full h-64 bg-gray-200 animate-pulse" />
-                    }
-                  >
-                    <LazyInfoImage
-                      src="/Moving.png"
-                      alt="انتقال به ملل تریدر"
-                      className="w-[140px] lg:w-[300px]"
-                    />
-                  </Suspense>
-                }
-                title="انتقال به ملل تریدر"
-                content={[
-                  "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
-                ]}
-                linkHref="https://melaltrader.ir/migration"
-                linkText="انتقال به سامانه"
-              />
-            </motion.div>
+          <motion.div variants={itemVariants} className="w-full">
+            <InfoSection
+              reverse
+              imageComponent={
+                <Suspense
+                  fallback={
+                    <div className="w-full h-64 bg-gray-200 animate-pulse" />
+                  }
+                >
+                  <LazyInfoImage
+                    src="/login.png"
+                    alt="ثبت‌نام غیرحضوری"
+                    className="w-[140px] lg:w-[300px]"
+                  />
+                </Suspense>
+              }
+              title="ثبت‌نام غیرحضوری    "
+              content={[
+                "فرآیند ثبت‌نام ساده و سریع",
+                "دسترسی به پلتفرم‌های پیشرفته",
+                "پشتیبانی شبانه‌روزی",
+              ]}
+              linkHref="https://portal.melaltrader.ir/"
+              linkText="انتقال به سامانه"
+            />
           </motion.div>
         </div>
 
@@ -81,7 +71,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           whileTap={{ scale: 0.95 }}
         >
           <button
-            onClick={() => scrollToSection(3)}
+            onClick={() => scrollToSection(5)}
             className="px-6 py-3 bg-sky-600 text-white rounded-full flex items-center cursor-pointer"
           >
             <span>رفتن به بخش بعدی</span>
