@@ -79,7 +79,8 @@ const AnimatedSlide = () => {
   ];
 
   return (
-    <div className="mx-auto p-6 font-sans h-screen flex justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
+    <div className="mx-auto p-6 font-sans h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
+      <h2 className="text-white text-2xl font-bold mb-30">title website</h2>
       <div className="flex gap-4 w-full max-w-6xl justify-center items-center">
         {items.map((item, index) => (
           <div
@@ -118,7 +119,7 @@ const AnimatedSlide = () => {
             <div className="relative h-full p-6 flex flex-col">
               <h3
                 className={cn(
-                  "text-xl font-bold text-white rotate-90 origin-top-left mt-32 whitespace-nowrap",
+                  "text-xl font-bold text-white rotate-90 ml-20. origin-top-left mt-32 whitespace-nowrap",
                   "transition-all duration-300",
                   expandedItem === item.id
                     ? "rotate-0 mt-0"
