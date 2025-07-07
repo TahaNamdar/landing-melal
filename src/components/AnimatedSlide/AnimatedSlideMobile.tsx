@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import AnimatedSlideMobile from "./AnimatedSlideMobile";
 
 type Item = {
   id: number;
@@ -12,7 +11,7 @@ type Item = {
   link?: string;
 };
 
-const AnimatedSlide = () => {
+const AnimatedSlideMobile = () => {
   const items: Item[] = [
     {
       id: 1,
@@ -32,40 +31,12 @@ const AnimatedSlide = () => {
       description: "Cutting-edge research opportunities for students",
       image: "/slide3.png",
     },
-    {
-      id: 4,
-      title: "Athletics",
-      description: "State-of-the-art sports facilities and teams",
-      image: "/slide4.png",
-    },
-    {
-      id: 5,
-      title: "Arts",
-      description: "Vibrant arts and cultural programs",
-      image: "/slide5.png",
-    },
-    {
-      id: 6,
-      title: "Community",
-      description: "Join our diverse and inclusive community",
-      image: "/slide6.png",
-    },
-    {
-      id: 7,
-      title: "Admissions",
-      description: "Start your journey with us today",
-      image: "/slide7.png",
-    },
   ];
 
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
 
-  const onMouseEnterHandler = (id: number) => {
-    setExpandedItem(id);
-  };
-
-  const onMouseLeaveHandler = () => {
-    setExpandedItem(null);
+  const onClickHandler = (id: number) => {
+    setExpandedItem(expandedItem === id ? null : id);
   };
 
   // Gradient colors for each card
@@ -80,23 +51,18 @@ const AnimatedSlide = () => {
   ];
 
   return (
-    <div className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
-      <h2 className="text-white text-2xl font-bold ">title website</h2>
-      <AnimatedSlideMobile />
-      <div className=" gap-4 w-full max-w-6xl justify-center items-center hidden md:flex">
+    <>
+      <div className="flex-col gap-4 w-full max-w-6xl justify-center items-center md:hidden">
         {items.map((item, index) => (
           <div
             key={item.id}
             className={cn(
-              "h-[500px] w-20 rounded-2xl relative overflow-hidden",
+              "h-[60px] w-full rounded-2xl relative overflow-hidden",
               "transition-all duration-500 ease-in-out",
-              "cursor-pointer group",
-              expandedItem === item.id
-                ? "w-[400px] flex-[2]"
-                : "hover:w-32 flex-1"
+              "cursor-pointer",
+              expandedItem === item.id ? "h-auto" : "hover:opacity-90"
             )}
-            onMouseEnter={() => onMouseEnterHandler(item.id)}
-            onMouseLeave={onMouseLeaveHandler}
+            onClick={() => onClickHandler(item.id)}
           >
             {/* Background with gradient and blur */}
             <div
@@ -110,9 +76,7 @@ const AnimatedSlide = () => {
               <div
                 className={cn(
                   "absolute inset-0 bg-black/60 transition-all duration-500",
-                  expandedItem === item.id
-                    ? "bg-black/30"
-                    : "group-hover:bg-black/50"
+                  expandedItem === item.id ? "bg-black/30" : "hover:bg-black/50"
                 )}
               />
             </div>
@@ -121,11 +85,11 @@ const AnimatedSlide = () => {
             <div className="relative h-full p-6 flex flex-col">
               <h3
                 className={cn(
-                  "text-xl font-bold text-white rotate-90 ml-20. origin-top-left mt-32 whitespace-nowrap",
+                  "text-xl font-bold text-white",
                   "transition-all duration-300",
                   expandedItem === item.id
                     ? "rotate-0 mt-0"
-                    : "group-hover:translate-x-2"
+                    : "rotate-90 ml-20 origin-top-left mt-32 whitespace-nowrap"
                 )}
               >
                 {item.title}
@@ -152,8 +116,8 @@ const AnimatedSlide = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
-export default AnimatedSlide;
+export default AnimatedSlideMobile;

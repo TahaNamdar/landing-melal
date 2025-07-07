@@ -1,8 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { Navigation } from "@/components/Navigation/Navigation";
-import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection/ServicesSection";
-import { ProductsSection } from "@/components/ProductsSection/ProductsSection";
 import { ServicesSection2 } from "@/components/ServicesSection2/ServicesSection";
 import { ServicesSection3 } from "@/components/ServicesSection3/ServicesSection";
 import AnimatedSlide from "@/components/AnimatedSlide/AnimatedSlide";
@@ -79,7 +76,7 @@ export const LandingPage: React.FC = () => {
 
       <AnimatedSlide />
 
-      <HeroSection sectionRef={section1Ref} scrollToSection={scrollToSection} />
+      {/* <HeroSection sectionRef={section1Ref} scrollToSection={scrollToSection} /> */}
 
       <ServicesSection
         sectionRef={section2Ref}
@@ -96,10 +93,10 @@ export const LandingPage: React.FC = () => {
         scrollToSection={scrollToSection}
       />
 
-      <ProductsSection
+      {/* <ProductsSection
         sectionRef={section5Ref}
         scrollToSection={scrollToSection}
-      />
+      /> */}
     </div>
   );
 };
