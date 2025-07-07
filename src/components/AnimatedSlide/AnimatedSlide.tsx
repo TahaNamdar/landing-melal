@@ -77,7 +77,7 @@ const AnimatedSlide = () => {
       description: "ارسال آفلاین سفارش‌های عرضه اولیه",
       content:
         "در صورتی که به خرید عرضه‌های اولیه علاقه‌مند هستید اما فرصت سفارش‌گذاری در روز عرضه را ندارید، می‌توانید با استفاده از ملل تریدر، سفارش خرید خود را چند روز زودتر و به صورت آفلاین ثبت کنید. با این کار، سفارش شما در روز عرضه به شکل خودکار به هسته معاملات ارسال خواهد شد.",
-      image: "/slide8.png", // Added missing image property
+      image: "/slide8.png",
     },
   ];
 
@@ -91,23 +91,23 @@ const AnimatedSlide = () => {
     setExpandedItem(null);
   };
 
-  // Light theme gradient colors for each card
+  // Dark theme gradient colors for each card
   const gradients = [
-    "from-purple-300 to-blue-900",
-    "from-rose-300 to-amber-900",
-    "from-emerald-300 to-teal-900",
-    "from-red-300 to-orange-900",
-    "from-indigo-300 to-violet-900",
-    "from-cyan-300 to-sky-900",
-    "from-pink-300 to-fuchsia-900",
+    "from-purple-200 to-blue-900",
+    "from-rose-500 to-amber-200",
+    "from-emerald-200 to-teal-900",
+    "from-pink-500 to-fuchsia-200",
+    "from-indigo-200 to-violet-900",
+    "from-cyan-500 to-sky-200",
+    "from-pink-200 to-fuchsia-900",
   ];
 
   return (
     <div
       dir="rtl"
-      className="mx-auto p-6 font-sans h-screen  flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-50 to-gray-100"
+      className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-800 to-gray-950"
     >
-      <h2 className="text-emerald-700 text-2xl font-bold">
+      <h2 className="text-emerald-400 text-2xl font-bold">
         شرکت اندیشه پردازان چوگان
       </h2>
       <AnimatedSlideMobile />
@@ -129,18 +129,18 @@ const AnimatedSlide = () => {
             {/* Background with gradient and blur */}
             <div
               className={cn(
-                "absolute inset-0  bg-gradient-to-b",
+                "absolute inset-0 bg-gradient-to-b",
                 gradients[index % gradients.length],
                 "backdrop-blur-3xl"
               )}
             >
-              {/* Light overlay that reduces on hover */}
+              {/* Dark overlay that reduces on hover */}
               <div
                 className={cn(
-                  "absolute inset-0 bg-white/60 transition-all duration-500",
+                  "absolute inset-0 bg-black/60 transition-all duration-500",
                   expandedItem === item.id
-                    ? "bg-white/30"
-                    : "group-hover:bg-white/50"
+                    ? "bg-black/30"
+                    : "group-hover:bg-black/50"
                 )}
               />
             </div>
@@ -149,7 +149,7 @@ const AnimatedSlide = () => {
             <div className="relative h-full p-6 flex flex-col">
               <h3
                 className={cn(
-                  "text-xl font-bold text-gray-800 rotate-90 mr-[-10px]  origin-top-right mt-32 whitespace-nowrap",
+                  "text-xl font-bold text-gray-100 rotate-90 mr-[-10px] origin-top-right mt-32 whitespace-nowrap",
                   "transition-all duration-300",
                   expandedItem === item.id
                     ? "rotate-0 mt-0"
@@ -161,15 +161,15 @@ const AnimatedSlide = () => {
 
               {expandedItem === item.id && (
                 <div className="flex-1 flex flex-col mt-4 space-y-4">
-                  <p className="text-gray-700 font-bold animate-fade-in">
+                  <p className="text-gray-100 font-bold animate-fade-in">
                     {item.description}
                   </p>{" "}
-                  <p className="text-gray-700 text-sm animate-fade-in">
+                  <p className="text-gray-300 text-sm animate-fade-in">
                     {item.content}
                   </p>
                   {item.image && (
                     <div className="flex-1 relative rounded-xl overflow-hidden mt-4">
-                      <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
                       <img
                         src={item.image}
                         alt={item.title}
