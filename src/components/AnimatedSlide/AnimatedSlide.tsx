@@ -68,22 +68,22 @@ const AnimatedSlide = () => {
     setExpandedItem(null);
   };
 
-  // Gradient colors for each card
+  // Light theme gradient colors for each card
   const gradients = [
-    "from-purple-50/80 to-blue-900/80",
-    "from-rose-900/80 to-amber-100/80",
-    "from-emerald-50/80 to-teal-900/80",
-    "from-red-900/80 to-orange-50/80",
-    "from-indigo-50/80 to-violet-900/80",
-    "from-cyan-900/80 to-sky-50/80",
-    "from-pink-50/80 to-fuchsia-900/80",
+    "from-purple-300 to-blue-800",
+    "from-rose-300 to-amber-800",
+    "from-emerald-300 to-teal-800",
+    "from-red-300 to-orange-800",
+    "from-indigo-300 to-violet-800",
+    "from-cyan-300 to-sky-800",
+    "from-pink-300 to-fuchsia-800",
   ];
 
   return (
-    <div className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
-      <h2 className="text-white text-2xl font-bold ">title website</h2>
+    <div className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-50 to-gray-100">
+      <h2 className="text-gray-800 text-2xl font-bold">title website</h2>
       <AnimatedSlideMobile />
-      <div className=" gap-4 w-full max-w-6xl justify-center items-center hidden md:flex">
+      <div className="gap-4 w-full max-w-6xl justify-center items-center hidden md:flex">
         {items.map((item, index) => (
           <div
             key={item.id}
@@ -106,13 +106,13 @@ const AnimatedSlide = () => {
                 "backdrop-blur-sm"
               )}
             >
-              {/* Dark overlay that reduces on hover */}
+              {/* Light overlay that reduces on hover */}
               <div
                 className={cn(
-                  "absolute inset-0 bg-black/60 transition-all duration-500",
+                  "absolute inset-0 bg-white/60 transition-all duration-500",
                   expandedItem === item.id
-                    ? "bg-black/30"
-                    : "group-hover:bg-black/50"
+                    ? "bg-white/30"
+                    : "group-hover:bg-white/50"
                 )}
               />
             </div>
@@ -121,7 +121,7 @@ const AnimatedSlide = () => {
             <div className="relative h-full p-6 flex flex-col">
               <h3
                 className={cn(
-                  "text-xl font-bold text-white rotate-90 ml-20. origin-top-left mt-32 whitespace-nowrap",
+                  "text-xl font-bold text-gray-800 rotate-90 ml-20 origin-top-left mt-32 whitespace-nowrap",
                   "transition-all duration-300",
                   expandedItem === item.id
                     ? "rotate-0 mt-0"
@@ -133,12 +133,12 @@ const AnimatedSlide = () => {
 
               {expandedItem === item.id && (
                 <div className="flex-1 flex flex-col mt-4 space-y-4">
-                  <p className="text-white/80 text-sm animate-fade-in">
+                  <p className="text-gray-700 text-sm animate-fade-in">
                     {item.description}
                   </p>
                   {item.image && (
                     <div className="flex-1 relative rounded-xl overflow-hidden mt-4">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent z-10" />
                       <img
                         src={item.image}
                         alt={item.title}
