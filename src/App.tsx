@@ -7,7 +7,7 @@ function App() {
       <LandingPage />
 
       {/* Decorative SVG elements */}
-      {/* <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none hidden xl:block">
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none hidden xl:block">
         <svg
           viewBox="0 0 200 200"
           className="absolute -top-10 -left-10 w-96 h-96 opacity-20 text-primary"
@@ -51,7 +51,7 @@ function App() {
             fill="currentColor"
           ></path>
         </svg>
-      </div> */}
+      </div>
     </div>
   );
 }

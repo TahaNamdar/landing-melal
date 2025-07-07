@@ -88,8 +88,8 @@ const AnimatedSlideMobile = () => {
 
   // Lighter gradient colors for each card
   const gradients = [
-    "from-purple-500/80 to-blue-900/80",
-    "from-rose-500/80 to-amber-900/80",
+    "from-purple-200/80 to-blue-400/80",
+    "from-rose-200/80 to-amber-400/80",
     "from-emerald-500/80 to-teal-900/80",
     "from-red-500/80 to-orange-900/80",
     "from-indigo-500/80 to-violet-900/80",
