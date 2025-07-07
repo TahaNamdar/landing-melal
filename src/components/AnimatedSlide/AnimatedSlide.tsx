@@ -138,11 +138,11 @@ const AnimatedSlide = () => {
                   </p>
                   {item.image && (
                     <div className="flex-1 relative rounded-xl overflow-hidden mt-4">
-                      <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent z-10" />
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover animate-fade-in"
+                        className="w-full h-full object-contain animate-fade-in"
                       />
                     </div>
                   )}
