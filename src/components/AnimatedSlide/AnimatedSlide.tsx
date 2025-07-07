@@ -69,18 +69,18 @@ const AnimatedSlide = () => {
 
   // Gradient colors for each card
   const gradients = [
-    "from-purple-900/80 to-blue-900/80",
-    "from-rose-900/80 to-amber-900/80",
-    "from-emerald-900/80 to-teal-900/80",
-    "from-red-900/80 to-orange-900/80",
-    "from-indigo-900/80 to-violet-900/80",
-    "from-cyan-900/80 to-sky-900/80",
-    "from-pink-900/80 to-fuchsia-900/80",
+    "from-purple-50/80 to-blue-900/80",
+    "from-rose-900/80 to-amber-100/80",
+    "from-emerald-50/80 to-teal-900/80",
+    "from-red-900/80 to-orange-50/80",
+    "from-indigo-50/80 to-violet-900/80",
+    "from-cyan-900/80 to-sky-50/80",
+    "from-pink-50/80 to-fuchsia-900/80",
   ];
 
   return (
-    <div className="mx-auto p-6 font-sans h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
-      <h2 className="text-white text-2xl font-bold mb-30">title website</h2>
+    <div className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950">
+      <h2 className="text-white text-2xl font-bold ">title website</h2>
       <div className="flex gap-4 w-full max-w-6xl justify-center items-center">
         {items.map((item, index) => (
           <div
