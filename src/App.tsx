@@ -7,8 +7,7 @@ function App() {
       <LandingPage />
 
       {/* Decorative SVG elements */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none hidden xl:block">
-        {/* Blob 1 */}
+      {/* <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none hidden xl:block">
         <svg
           viewBox="0 0 200 200"
           className="absolute -top-10 -left-10 w-96 h-96 opacity-20 text-primary"
@@ -31,7 +30,6 @@ function App() {
             transform="translate(100 100)"
           />
         </svg>
-        {/* Blob 2 */}
         <svg
           viewBox="0 0 200 200"
           className="absolute bottom-10 right-10 w-64 h-64 opacity-15 text-primary"
@@ -43,7 +41,6 @@ function App() {
             transform="translate(100 100)"
           />
         </svg>
-        {/* Abstract waves */}
         <svg
           className="absolute -bottom-10 left-0 w-full h-32 opacity-10 text-primary"
           viewBox="0 0 1200 120"
@@ -54,7 +51,7 @@ function App() {
             fill="currentColor"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 }

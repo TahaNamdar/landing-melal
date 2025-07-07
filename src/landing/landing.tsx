@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/ServicesSection/ServicesSection";
 import { ProductsSection } from "@/components/ProductsSection/ProductsSection";
 import { ServicesSection2 } from "@/components/ServicesSection2/ServicesSection";
 import { ServicesSection3 } from "@/components/ServicesSection3/ServicesSection";
+import AnimatedSlide from "@/components/AnimatedSlide/AnimatedSlide";
 
 export const LandingPage: React.FC = () => {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -71,10 +72,12 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <Navigation
+      {/* <Navigation
         scrollToSection={scrollToSection}
         activeSection={activeSection}
-      />
+      /> */}
+
+      <AnimatedSlide />
 
       <HeroSection sectionRef={section1Ref} scrollToSection={scrollToSection} />
 

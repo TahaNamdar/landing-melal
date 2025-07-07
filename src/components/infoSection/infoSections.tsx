@@ -33,7 +33,6 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   maxImageHeight = "400px",
   content,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const ImageContent = imageComponent || (
