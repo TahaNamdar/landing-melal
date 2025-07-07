@@ -70,13 +70,13 @@ const AnimatedSlide = () => {
 
   // Light theme gradient colors for each card
   const gradients = [
-    "from-purple-300 to-blue-800",
-    "from-rose-300 to-amber-800",
-    "from-emerald-300 to-teal-800",
-    "from-red-300 to-orange-800",
-    "from-indigo-300 to-violet-800",
-    "from-cyan-300 to-sky-800",
-    "from-pink-300 to-fuchsia-800",
+    "from-purple-300 to-blue-900",
+    "from-rose-300 to-amber-900",
+    "from-emerald-300 to-teal-900",
+    "from-red-300 to-orange-900",
+    "from-indigo-300 to-violet-900",
+    "from-cyan-300 to-sky-900",
+    "from-pink-300 to-fuchsia-900",
   ];
 
   return (
@@ -101,9 +101,9 @@ const AnimatedSlide = () => {
             {/* Background with gradient and blur */}
             <div
               className={cn(
-                "absolute inset-0 bg-gradient-to-b",
+                "absolute inset-0  bg-gradient-to-b",
                 gradients[index % gradients.length],
-                "backdrop-blur-sm"
+                "backdrop-blur-3xl"
               )}
             >
               {/* Light overlay that reduces on hover */}

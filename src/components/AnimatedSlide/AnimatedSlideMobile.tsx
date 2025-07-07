@@ -33,26 +33,26 @@ const AnimatedSlideMobile = () => {
     },
   ];
 
-  const [expandedItem, setExpandedItem] = useState<number | null>(null);
+  const [expandedItem, setExpandedItem] = useState<number | null>(1);
 
   const onClickHandler = (id: number) => {
     setExpandedItem(expandedItem === id ? null : id);
   };
 
-  // Gradient colors for each card
+  // Lighter gradient colors for each card
   const gradients = [
-    "from-purple-50/80 to-blue-900/80",
-    "from-rose-900/80 to-amber-100/80",
-    "from-emerald-50/80 to-teal-900/80",
-    "from-red-900/80 to-orange-50/80",
-    "from-indigo-50/80 to-violet-900/80",
-    "from-cyan-900/80 to-sky-50/80",
-    "from-pink-50/80 to-fuchsia-900/80",
+    "from-purple-500/80 to-blue-900/80",
+    "from-rose-500/80 to-amber-900/80",
+    "from-emerald-500/80 to-teal-900/80",
+    "from-red-500/80 to-orange-900/80",
+    "from-indigo-500/80 to-violet-900/80",
+    "from-cyan-500/80 to-sky-900/80",
+    "from-pink-500/80 to-fuchsia-900/80",
   ];
 
   return (
     <>
-      <div className="flex-col gap-4 w-full max-w-6xl justify-center items-center md:hidden">
+      <div className="flex-col space-y-1 w-full max-w-6xl justify-center  items-center md:hidden">
         {items.map((item, index) => (
           <div
             key={item.id}
@@ -72,24 +72,21 @@ const AnimatedSlideMobile = () => {
                 "backdrop-blur-sm"
               )}
             >
-              {/* Dark overlay that reduces on hover */}
+              {/* Light overlay that reduces on hover */}
               <div
                 className={cn(
-                  "absolute inset-0 bg-black/60 transition-all duration-500",
-                  expandedItem === item.id ? "bg-black/30" : "hover:bg-black/50"
+                  "absolute inset-0 bg-white/30 transition-all duration-500",
+                  expandedItem === item.id ? "bg-white/20" : "hover:bg-white/40"
                 )}
               />
             </div>
 
             {/* Content */}
-            <div className="relative h-full p-6 flex flex-col">
+            <div className="relative h-full p-6 flex flex-col items-end justify-center">
               <h3
                 className={cn(
-                  "text-xl font-bold text-white",
-                  "transition-all duration-300",
-                  expandedItem === item.id
-                    ? "rotate-0 mt-0"
-                    : "rotate-90 ml-20 origin-top-left mt-32 whitespace-nowrap"
+                  "text-xl font-bold text-gray-800", // Changed to dark text for better contrast
+                  "transition-all duration-300 "
                 )}
               >
                 {item.title}
@@ -97,12 +94,15 @@ const AnimatedSlideMobile = () => {
 
               {expandedItem === item.id && (
                 <div className="flex-1 flex flex-col mt-4 space-y-4">
-                  <p className="text-white/80 text-sm animate-fade-in">
+                  <p className="text-gray-700/80 text-sm animate-fade-in">
+                    {" "}
+                    {/* Darker text for readability */}
                     {item.description}
                   </p>
                   {item.image && (
                     <div className="flex-1 relative rounded-xl overflow-hidden mt-4">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent z-10" />{" "}
+                      {/* Lighter overlay */}
                       <img
                         src={item.image}
                         alt={item.title}
