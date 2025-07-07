@@ -121,11 +121,11 @@ const AnimatedSlide = () => {
             <div className="relative h-full p-6 flex flex-col">
               <h3
                 className={cn(
-                  "text-xl font-bold text-gray-800 rotate-90 ml-20 origin-top-left mt-32 whitespace-nowrap",
+                  "text-xl font-bold text-gray-800 rotate-90  origin-top-left mt-32 whitespace-nowrap",
                   "transition-all duration-300",
                   expandedItem === item.id
                     ? "rotate-0 mt-0"
-                    : "group-hover:translate-x-2"
+                    : "group-hover:translate-x-2 ml-3"
                 )}
               >
                 {item.title}
