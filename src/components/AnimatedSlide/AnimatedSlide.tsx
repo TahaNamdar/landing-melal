@@ -16,45 +16,50 @@ const AnimatedSlide = () => {
   const items: Item[] = [
     {
       id: 1,
-      title: "Campus",
+      title: "سفارش‌گذاری",
       description: "Explore our beautiful campus facilities and student life",
       image: "/slide1.png",
     },
     {
       id: 2,
-      title: "Academics",
+      title: "پرتفوی",
       description: "Discover our world-class academic programs",
       image: "/slide2.png",
     },
     {
       id: 3,
-      title: "Research",
+      title: "آپشن",
       description: "Cutting-edge research opportunities for students",
       image: "/slide3.png",
     },
     {
       id: 4,
-      title: "Athletics",
+      title: "   نمای بازار",
       description: "State-of-the-art sports facilities and teams",
       image: "/slide4.png",
     },
     {
       id: 5,
-      title: "Arts",
+      title: "  تحلیل تکنیکال",
       description: "Vibrant arts and cultural programs",
       image: "/slide5.png",
     },
     {
       id: 6,
-      title: "Community",
+      title: "   دیده‌بان",
       description: "Join our diverse and inclusive community",
       image: "/slide6.png",
     },
     {
       id: 7,
-      title: "Admissions",
+      title: " هشدار شرطی",
       description: "Start your journey with us today",
       image: "/slide7.png",
+    },
+    {
+      id: 8,
+      title: "عرضه اولیه",
+      description: "Start your journey with us today",
     },
   ];
 
@@ -80,8 +85,13 @@ const AnimatedSlide = () => {
   ];
 
   return (
-    <div className="mx-auto p-6 font-sans h-screen flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-50 to-gray-100">
-      <h2 className="text-gray-800 text-2xl font-bold">title website</h2>
+    <div
+      dir="rtl"
+      className="mx-auto p-6 font-sans h-screen  flex flex-col space-y-30 justify-center items-center bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <h2 className="text-emerald-700 text-2xl font-bold">
+        شرکت اندیشه پردازان چوگان
+      </h2>
       <AnimatedSlideMobile />
       <div className="gap-4 w-full max-w-6xl justify-center items-center hidden md:flex">
         {items.map((item, index) => (

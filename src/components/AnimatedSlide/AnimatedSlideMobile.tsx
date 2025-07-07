@@ -82,7 +82,7 @@ const AnimatedSlideMobile = () => {
             </div>
 
             {/* Content */}
-            <div className="relative h-full p-6 flex flex-col items-end justify-center">
+            <div className="relative h-full p-6 flex flex-col   justify-center">
               <h3
                 className={cn(
                   "text-xl font-bold text-gray-800", // Changed to dark text for better contrast
