@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-[40vh] h-[600px] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+      className="lg:min-h-[40vh] lg:h-[600px] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -29,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div>
           <motion.div
             dir="rtl"
-            className="text-white break-words w-[80%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[36px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
+            className="text-white break-words w-[90%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[36px] font-bold text-center mb-4 lg:mt-4  lg:pt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         <motion.div
-          className="w-full py-12 relative z-20"
+          className="w-full py-4 lg:py-12 relative z-20"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Step 3 */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col z-30 items-center w-full md:w-1/3 border border-white/10 h-[240px] p-10 rounded-4xl cursor-pointer"
+                className="flex flex-col z-30 items-center w-full md:w-1/3 border border-white/10  lg:h-[240px] p-10 rounded-4xl cursor-pointer"
               >
                 <div className="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   3

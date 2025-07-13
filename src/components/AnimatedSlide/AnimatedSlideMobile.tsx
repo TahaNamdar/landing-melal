@@ -80,7 +80,7 @@ const AnimatedSlideMobile = () => {
     },
   ];
 
-  const [expandedItem, setExpandedItem] = useState<number | null>(0);
+  const [expandedItem, setExpandedItem] = useState<number | null>(2);
 
   const onClickHandler = (id: number) => {
     setExpandedItem(expandedItem === id ? null : id);
@@ -88,23 +88,24 @@ const AnimatedSlideMobile = () => {
 
   // Lighter gradient colors for each card
   const gradients = [
-    "from-purple-200/80 to-blue-400/80",
-    "from-rose-200/80 to-amber-400/80",
-    "from-emerald-500/80 to-teal-900/80",
-    "from-red-500/80 to-orange-900/80",
-    "from-indigo-500/80 to-violet-900/80",
-    "from-cyan-500/80 to-sky-900/80",
-    "from-pink-500/80 to-fuchsia-900/80",
+    "from-emerald-200 to-teal-300",
+    "from-rose-200 to-amber-200",
+    "from-emerald-200 to-teal-300",
+    "from-rose-300 to-amber-200",
+    "from-emerald-200 to-teal-300",
+    "from-blue-200 to-blue-300",
+    "from-emerald-200 to-teal-300",
+    "from-blue-200 to-blue-300",
   ];
 
   return (
     <>
-      <div className="flex-col space-y-1 w-full max-w-6xl justify-center  items-center md:hidden">
+      <div className="flex-col space-y-1 w-full  justify-center  items-center md:hidden">
         {items.map((item, index) => (
           <div
             key={item.id}
             className={cn(
-              "h-[60px] w-full rounded-2xl relative overflow-hidden",
+              "h-[40px] w-full rounded-sm relative overflow-hidden",
               "transition-all duration-500 ease-in-out",
               "cursor-pointer",
               expandedItem === item.id ? "h-auto" : "hover:opacity-90"
