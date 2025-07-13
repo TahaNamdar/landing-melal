@@ -93,14 +93,14 @@ const AnimatedSlide = () => {
 
   // Light theme gradient colors for each card
   const gradients = [
-    "from-emerald-300 to-teal-400",
-    "from-rose-300 to-amber-500",
-    "from-emerald-300 to-teal-400",
+    "from-emerald-200 to-teal-300",
+    "from-rose-200 to-amber-200",
+    "from-emerald-200 to-teal-300",
     "from-rose-300 to-amber-200",
-    "from-emerald-300 to-teal-400",
-    "from-blue-300 to-blue-800",
-    "from-emerald-300 to-teal-400",
-    "from-blue-300 to-blue-600",
+    "from-emerald-200 to-teal-300",
+    "from-blue-200 to-blue-300",
+    "from-emerald-200 to-teal-300",
+    "from-blue-200 to-blue-300",
   ];
 
   return (
