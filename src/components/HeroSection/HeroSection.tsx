@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-[105vh] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+      className="min-h-[40vh] h-[600px] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -29,14 +29,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div>
           <motion.div
             dir="rtl"
-            className="text-white break-words w-[80%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
+            className="text-white break-words w-[80%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[36px] font-bold text-center mb-4 mt-4 pt-10 lg:pt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             ملل تریدر: سفری هوشمند به قله‌های مالی
           </motion.div>
-          <p className="border-b border-white/30 w-[60%] mx-auto text-center pb-6 2xl:text-xl font-medium text-white">
+          <p className="border-b border-white/30 w-[60%] mx-auto text-center pb-6 2xl:text-lg font-medium text-white">
             با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت کنید
           </p>
         </div>
@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <button
             onClick={() => scrollToSection(2)}
-            className="px-6 mb-10 py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center animate-bounce"
+            className="px-6 mb-[40px]  py-3 bg-sky-600 text-white rounded-full cursor-pointer flex items-center animate-bounce"
           >
             <span>رفتن به بخش بعدی</span>
             <svg

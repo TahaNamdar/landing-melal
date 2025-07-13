@@ -19,7 +19,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen pt-24 flex flex-col justify-center bg-gray-900"
+      className="min-h-screen pt-24 flex flex-col justify-center "
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -40,7 +40,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
                   <LazyInfoImage
                     src="/login.png"
                     alt="ثبت‌نام غیرحضوری"
-                    className="w-[140px] lg:w-[300px]"
+                    className="w-[140px] lg:w-[400px]"
                   />
                 </Suspense>
               }
