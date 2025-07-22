@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="lg:p-4 mx-auto  w-[90%] xl:w-[96%] relative z-10">
+      <div className="lg:p-4  mx-auto  w-[90%] xl:w-[96%] relative z-10">
         {/* Header Section */}
         <div className="mb-10">
           <motion.div

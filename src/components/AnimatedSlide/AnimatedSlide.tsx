@@ -115,10 +115,10 @@ const AnimatedSlide = () => {
   return (
     <div
       dir="rtl"
-      className="mx-auto mt-6 font-sans w-[75%] flex flex-col space-y-20 justify-center items-center  "
+      className="mx-auto mt-6 font-sans lg:w-[75%] flex flex-col space-y-20 justify-center items-center  "
     >
-      <AnimatedSlideMobile />
-      <div className="gap-3 w-full justify-center items-center hidden md:flex">
+      {/* <AnimatedSlideMobile /> */}
+      <div className="gap-3 w-full justify-center items-center hidden xl:flex">
         {items.map((item, index) => (
           <div
             //height
