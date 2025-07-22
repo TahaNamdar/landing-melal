@@ -21,6 +21,7 @@ interface InfoSectionProps {
   linkText?: string;
   reverse?: boolean;
   maxImageHeight?: string;
+  dark?: boolean;
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
@@ -32,6 +33,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   reverse = false,
   maxImageHeight = "400px",
   content,
+  dark = false,
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -66,14 +68,22 @@ const InfoSection: React.FC<InfoSectionProps> = ({
       }`}
     >
       <div>
-        <h2 className={cn("text-xl xl:text-2xl font-bold mb-8 text-primary")}>
+        <h2
+          className={cn(
+            "text-xl xl:text-2xl font-bold mb-8",
+            dark ? "text-white" : "text-primary"
+          )}
+        >
           {title}
 
-          <ul className=" mt-4">
+          <ul className="mt-4">
             {content?.map((item, index) => (
               <li
                 key={index}
-                className="text-gray-800 text-sm text-justify  mt-1 "
+                className={cn(
+                  "text-sm text-justify mt-1",
+                  dark ? "text-white" : "text-gray-800"
+                )}
               >
                 {item}
               </li>

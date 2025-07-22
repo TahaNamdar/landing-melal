@@ -14,18 +14,17 @@ interface ServicesSectionProps {
 
 export const ServicesSection2: React.FC<ServicesSectionProps> = ({
   sectionRef,
-  scrollToSection,
 }) => {
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen pt-24 flex flex-col justify-center bg-gray-50"
+      className="min-h-screen   flex flex-col justify-center bg-[#0C363C]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%]">
+      <div className=" mx-auto w-[90%] xl:w-[96%]">
         {/* Info Sections */}
         <div className="flex 2xl:w-[60%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
           <motion.div
@@ -36,6 +35,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
             className="w-full"
           >
             <InfoSection
+              dark
               imageComponent={
                 <Suspense
                   fallback={
@@ -59,7 +59,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
           </motion.div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="mt-12 flex justify-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -84,7 +84,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
               />
             </svg>
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

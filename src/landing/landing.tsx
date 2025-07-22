@@ -2,9 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { ServicesSection } from "@/components/ServicesSection/ServicesSection";
 import { ServicesSection2 } from "@/components/ServicesSection2/ServicesSection";
 import { ServicesSection3 } from "@/components/ServicesSection3/ServicesSection";
-import AnimatedSlide from "@/components/AnimatedSlide/AnimatedSlide";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
-import { Navigation } from "@/components/Navigation/Navigation";
 
 export const LandingPage: React.FC = () => {
   const section1Ref = useRef<HTMLDivElement>(null);
