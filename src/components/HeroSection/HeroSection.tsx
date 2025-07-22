@@ -19,18 +19,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="h-screen pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+      className="h-screen   flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="lg:p-4 mx-auto w-[90%] xl:w-[96%] relative z-10">
+      <div className="lg:p-4 mx-auto  w-[90%] xl:w-[96%] relative z-10">
         {/* Header Section */}
-        <div>
+        <div className="mb-10">
           <motion.div
             dir="rtl"
-            className="text-white break-words w-[90%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[36px] font-bold text-center mb-4 lg:mt-4  lg:pt-10"
+            className="text-white break-words w-[90%] lg:w-full mx-auto justify-center text-3xl md:text-2xl 2xl:text-[46px] font-bold text-center mb-4 lg:mt-4  lg:pt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
