@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { RefObject } from "react";
-import { sectionVariants } from "../animations/variants";
+import {
+  itemVariants,
+  containerVariants,
+  sectionVariants,
+} from "../animations/variants";
 import AnimatedSlide from "../AnimatedSlide/AnimatedSlide";
 
 interface HeroSectionProps {
@@ -12,7 +16,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
   return (
     <motion.div
       ref={sectionRef}
-      className="h-screen   flex flex-col justify-center items-center bg-[#0c363cce] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full "
+      className="xl:h-screen pt-20 pb-20 xl:pt-[unset] xl:pb-[unset] flex flex-col justify-center items-center bg-[#0c363cce] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full "
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -34,9 +38,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
             با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت کنید
           </p>
         </div>
-        {/* 
+
         <motion.div
-          className="w-full py-4 lg:py-12 relative z-20"
+          className="w-full py-4 lg:py-12 relative z-20 xl:hidden"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -93,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
               </motion.div>
             </div>
           </div>
-        </motion.div> */}
+        </motion.div>
 
         <AnimatedSlide />
 
