@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { RefObject } from "react";
-import {
-  containerVariants,
-  itemVariants,
-  sectionVariants,
-} from "../animations/variants";
+import { sectionVariants } from "../animations/variants";
 import AnimatedSlide from "../AnimatedSlide/AnimatedSlide";
 
 interface HeroSectionProps {
@@ -12,10 +8,7 @@ interface HeroSectionProps {
   scrollToSection: (sectionNumber: number) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
-  sectionRef,
-  scrollToSection,
-}) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
   return (
     <motion.div
       ref={sectionRef}
