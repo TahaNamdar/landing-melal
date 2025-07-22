@@ -18,7 +18,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen  flex flex-col pt-10 xl:pt-[unset]"
+      className="min-h-screen  flex flex-col pt-10 xl:pt-[unset] xl:justify-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
