@@ -133,7 +133,8 @@ const InfoSection: React.FC<InfoSectionProps> = ({
       <div>
         <div
           className={cn(
-            " flex-col   md:flex justify-around  md:flex-row  p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out "
+            " flex-col  md:flex justify-around  md:flex-row shadow-xl  p-8 items-center mx-auto mt-4 min-h-[400px] h-[400px] rounded-4xl transition-all duration-300 ease-in-out ",
+            dark ? " bg-neutral-800 " : " bg-neutral-200  "
           )}
         >
           <>
