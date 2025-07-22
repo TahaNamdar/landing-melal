@@ -7,12 +7,12 @@ interface HeroSectionProps {
   sectionRef: RefObject<HTMLDivElement | null>;
   scrollToSection: (sectionNumber: number) => void;
 }
-
+//bg-[url('/bg.avif')]  before:h-full before:bg-black/50 before:z-[1]
 export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
   return (
     <motion.div
       ref={sectionRef}
-      className="h-screen   flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+      className="h-screen   flex flex-col justify-center items-center bg-[#0c363ce8] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full "
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
