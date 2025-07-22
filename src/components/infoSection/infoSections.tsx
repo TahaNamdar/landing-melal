@@ -1,14 +1,6 @@
-// import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/components/ui/drawer";
+import React from "react";
+
 import { Button } from "@/components/ui/button";
 
 interface InfoSectionProps {
@@ -35,8 +27,6 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   content,
   dark = false,
 }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   const ImageContent = imageComponent || (
     <img
       src={imageSrc}
@@ -100,34 +90,6 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     </div>
   );
 
-  const MobileContent = (
-    <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-      <DrawerContent className="h-[40vh]">
-        <DrawerHeader>
-          <DrawerTitle>{title}</DrawerTitle>
-          <DrawerDescription>
-            <ul className="text-gray-900 text-sm px-6 mt-4">
-              {content?.map((item, index) => (
-                <li dir="rtl" key={index} className="mt-2 text-justify">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </DrawerDescription>
-        </DrawerHeader>
-        <DrawerFooter>
-          <Button
-            asChild
-            className="bg-sky-600 text-white h-14 w-[40%] mx-auto cursor-pointer"
-            onClick={() => window.open(linkHref, "_blank")}
-          >
-            مشاهده سامانه
-          </Button>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
-  );
-
   return (
     <>
       <div>
@@ -143,7 +105,6 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           </>
         </div>
       </div>
-      {MobileContent}
     </>
   );
 };
