@@ -140,7 +140,7 @@ const AnimatedSlide = () => {
               className={cn(
                 "absolute inset-0 bg-gradient-to-b",
                 gradients[index % gradients.length],
-                "backdrop-blur-3xl"
+                "backdrop-blur-3xl opacity-80"
               )}
             >
               {/* Light overlay that reduces on hover */}
