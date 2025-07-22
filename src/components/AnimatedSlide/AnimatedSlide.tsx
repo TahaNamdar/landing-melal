@@ -70,15 +70,15 @@ const AnimatedSlide = () => {
       image: "/slide6.png",
       height: "440px",
     },
-    {
-      id: 7,
-      title: "هشدار شرطی",
-      description: "آگاهی به‌موقع از تحولات بازار",
-      content:
-        "در ملل تریدر ابزار «هشدار شرطی» به شما این امکان را می‌دهد تا با تعیین شرایط دلخواه، بازار را به‌طور هوشمندانه زیر نظر داشته باشید.",
-      image: "/slide7.png",
-      height: "460px",
-    },
+    // {
+    //   id: 7,
+    //   title: "هشدار شرطی",
+    //   description: "آگاهی به‌موقع از تحولات بازار",
+    //   content:
+    //     "در ملل تریدر ابزار «هشدار شرطی» به شما این امکان را می‌دهد تا با تعیین شرایط دلخواه، بازار را به‌طور هوشمندانه زیر نظر داشته باشید.",
+    //   image: "/slide7.png",
+    //   height: "460px",
+    // },
     {
       id: 8,
       title: "عرضه اولیه",
@@ -97,7 +97,7 @@ const AnimatedSlide = () => {
   };
 
   const onMouseLeaveHandler = () => {
-    setExpandedItem(null);
+    setExpandedItem(4);
   };
 
   // Light theme gradient colors for each card
