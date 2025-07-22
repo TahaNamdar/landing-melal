@@ -5,6 +5,7 @@ import {
   itemVariants,
   sectionVariants,
 } from "../animations/variants";
+import AnimatedSlide from "../AnimatedSlide/AnimatedSlide";
 
 interface HeroSectionProps {
   sectionRef: RefObject<HTMLDivElement | null>;
@@ -18,7 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="lg:min-h-[40vh] lg:h-[600px] pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
+      className="h-screen pt-24 flex flex-col justify-center items-center bg-[url('/bg.avif')] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black/50 before:z-[1]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -40,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت کنید
           </p>
         </div>
-
+        {/* 
         <motion.div
           className="w-full py-4 lg:py-12 relative z-20"
           variants={containerVariants}
@@ -50,7 +51,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <div className="max-w-6xl mx-auto px-4">
             <div className="relative flex flex-col-reverse md:flex-row justify-between items-center gap-4">
-              {/* Step 3 */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col z-30 items-center w-full md:w-1/3 border border-white/10  lg:h-[240px] p-10 rounded-4xl cursor-pointer"
@@ -67,7 +67,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </p>
               </motion.div>
 
-              {/* Step 2 */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0 border border-white/10 h-[240px] p-10 rounded-4xl cursor-pointer"
@@ -101,7 +100,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
+
+        <AnimatedSlide />
 
         <motion.div
           className="mt-12 flex justify-center"

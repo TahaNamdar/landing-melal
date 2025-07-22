@@ -106,15 +106,15 @@ const AnimatedSlide = () => {
   return (
     <div
       dir="rtl"
-      className="mx-auto font-sans p-20 flex flex-col space-y-20 justify-center items-center bg-gray-50 "
+      className="mx-auto font-sans p-20 flex flex-col space-y-20 justify-center items-center  "
     >
       <AnimatedSlideMobile />
-      <div className="gap-4 w-full max-w-6xl justify-center items-center hidden md:flex">
+      <div className="gap-4 w-full justify-center items-center hidden md:flex">
         {items.map((item, index) => (
           <div
             key={item.id}
             className={cn(
-              "h-[400px] w-20 rounded-2xl relative overflow-hidden",
+              "h-[400px] rounded-2xl   relative overflow-hidden",
               "transition-all duration-500 ease-in-out",
               "cursor-pointer group",
               expandedItem === item.id

@@ -76,8 +76,6 @@ export const LandingPage: React.FC = () => {
       /> */}
       <HeroSection sectionRef={section1Ref} scrollToSection={scrollToSection} />
 
-      <AnimatedSlide />
-
       <ServicesSection
         sectionRef={section2Ref}
         scrollToSection={scrollToSection}
