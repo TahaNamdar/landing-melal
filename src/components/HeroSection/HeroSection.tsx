@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
   return (
     <motion.div
       ref={sectionRef}
-      className="h-screen   flex flex-col justify-center items-center bg-[#0c363ce8] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full "
+      className="h-screen   flex flex-col justify-center items-center bg-[#0c363cce] bg-cover bg-center bg-no-repeat bg-fixed relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full "
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
