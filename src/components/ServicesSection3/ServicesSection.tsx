@@ -40,7 +40,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
                   <LazyInfoImage
                     src="/login.png"
                     alt="ثبت‌نام غیرحضوری"
-                    className="w-[140px] lg:w-[400px]"
+                    className="w-[140px] lg:w-[500px]"
                   />
                 </Suspense>
               }

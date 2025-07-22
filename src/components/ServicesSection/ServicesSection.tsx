@@ -51,7 +51,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     <LazyInfoImage
                       src="/Moving.png"
                       alt="انتقال به ملل تریدر"
-                      className="w-[140px] lg:w-[400px]"
+                      className="w-[140px] lg:w-[500px]"
                     />
                   </Suspense>
                 }

@@ -26,7 +26,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
     >
       <div className=" mx-auto w-[90%] xl:w-[96%]">
         {/* Info Sections */}
-        <div className="flex 2xl:w-[60%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-10">
+        <div className="flex 2xl:w-[60%] xl:mx-auto gap-4 flex-wrap lg:flex-nowrap border-b py-18">
           <motion.div
             variants={itemVariants}
             initial="hidden"
@@ -45,7 +45,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
                   <LazyInfoImage
                     src="/Analysis.png"
                     alt="ملل تریدر"
-                    className="w-[140px] lg:w-[400px]"
+                    className="w-[140px] lg:w-[500px]"
                   />
                 </Suspense>
               }
