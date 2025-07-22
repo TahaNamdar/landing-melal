@@ -11,6 +11,7 @@ type Item = {
   textColor?: string;
   link?: string;
   content?: string;
+  height?: string;
 };
 
 const AnimatedSlide = () => {
@@ -22,6 +23,7 @@ const AnimatedSlide = () => {
       content:
         "زیرساخت معاملاتی ملل تریدر به‌گونه‌ای توسعه داده شده که امکان ارسال سفارش‌ها با سرعت بسیار بالا فراهم باشد.",
       image: "/slide1.png",
+      height: "500px",
     },
     {
       id: 2,
@@ -30,6 +32,7 @@ const AnimatedSlide = () => {
       content:
         "کاربران در این بخش می‌توانند نمادهایی که در اختیار دارند را مشاهده کرده و از قیمت لحظه‌ای هر نماد، میانگین قیمت خرید، ارزش به‌روز شده کل سبد و همچنین میزان سود یا زیان حاصل از معاملات خود مطلع شوند.",
       image: "/slide2.png",
+      height: "460px",
     },
     {
       id: 3,
@@ -38,6 +41,7 @@ const AnimatedSlide = () => {
       content:
         "در بخش معاملات آپشن سامانه ملل‌تریدر، کاربران می‌توانند با تکیه بر اطلاعات جامع و ابزارهای تحلیلی پیشرفته، قراردادهای آپشن را بررسی کرده و با دقت موقعیت‌های خود را مدیریت کنند.",
       image: "/slide3.png",
+      height: "440px",
     },
     {
       id: 4,
@@ -46,6 +50,7 @@ const AnimatedSlide = () => {
       content:
         "در سامانه ملل تریدر به نیاز شما برای دسترسی سریع و دقیق به اطلاعات بازار پاسخ دادیم. در بخش «نمای بازار» نمودار و اعداد شاخص بورس و فرابورس به صورت جداگانه نمایش داده می‌شود.",
       image: "/slide4.png",
+      height: "440px",
     },
     {
       id: 5,
@@ -54,6 +59,7 @@ const AnimatedSlide = () => {
       content:
         "در سامانه ملل تریدر، ابزار پیشرفته‌ای در اختیار کاربران قرار گرفته که تحلیل تکنیکال را ساده‌تر، سریع‌تر و دقیق‌تر از قبل می‌سازد.",
       image: "/slide5.png",
+      height: "440px",
     },
     {
       id: 6,
@@ -62,6 +68,7 @@ const AnimatedSlide = () => {
       content:
         "در ملل تریدر این امکان را دارید که نمادهای موردنظر خود را به دیده‌بان اضافه کنید تا همیشه در دسترس‌تان باشند و نیازی به جست‌وجوی مکرر نداشته باشید.",
       image: "/slide6.png",
+      height: "440px",
     },
     {
       id: 7,
@@ -70,6 +77,7 @@ const AnimatedSlide = () => {
       content:
         "در ملل تریدر ابزار «هشدار شرطی» به شما این امکان را می‌دهد تا با تعیین شرایط دلخواه، بازار را به‌طور هوشمندانه زیر نظر داشته باشید.",
       image: "/slide7.png",
+      height: "460px",
     },
     {
       id: 8,
@@ -78,6 +86,7 @@ const AnimatedSlide = () => {
       content:
         "در صورتی که به خرید عرضه‌های اولیه علاقه‌مند هستید اما فرصت سفارش‌گذاری در روز عرضه را ندارید، می‌توانید با استفاده از ملل تریدر، سفارش خرید خود را چند روز زودتر و به صورت آفلاین ثبت کنید.",
       image: "/slide8.png",
+      height: "500px",
     },
   ];
 
@@ -112,9 +121,10 @@ const AnimatedSlide = () => {
       <div className="gap-4 w-full justify-center items-center hidden md:flex">
         {items.map((item, index) => (
           <div
+            //height
             key={item.id}
             className={cn(
-              "h-[400px] rounded-2xl   relative overflow-hidden",
+              "rounded-2xl   relative overflow-hidden",
               "transition-all duration-500 ease-in-out",
               "cursor-pointer group",
               expandedItem === item.id
@@ -123,6 +133,7 @@ const AnimatedSlide = () => {
             )}
             onMouseEnter={() => onMouseEnterHandler(item.id)}
             onMouseLeave={onMouseLeaveHandler}
+            style={{ height: item.height || "400px" }}
           >
             {/* Background with gradient and blur */}
             <div
