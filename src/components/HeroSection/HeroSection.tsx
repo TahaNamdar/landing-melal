@@ -104,7 +104,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         <AnimatedSlide />
 
-        <motion.div
+        {/* <motion.div
           className="mt-12 flex justify-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -129,7 +129,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               />
             </svg>
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );
