@@ -18,7 +18,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen   flex flex-col justify-center bg-[#0C363C]"
+      className="min-h-screen   flex flex-col pt-10 xl:pt-[unset] bg-[#0C363C]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -45,7 +45,7 @@ export const ServicesSection2: React.FC<ServicesSectionProps> = ({
                   <LazyInfoImage
                     src="/Analysis.png"
                     alt="ملل تریدر"
-                    className="w-[140px] lg:w-[500px]"
+                    className="w-[240px] lg:w-[500px]"
                   />
                 </Suspense>
               }

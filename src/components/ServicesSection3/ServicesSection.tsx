@@ -14,12 +14,11 @@ interface ServicesSectionProps {
 
 export const ServicesSection3: React.FC<ServicesSectionProps> = ({
   sectionRef,
-  scrollToSection,
 }) => {
   return (
     <motion.div
       ref={sectionRef}
-      className="min-h-screen  flex flex-col justify-center "
+      className="min-h-screen  flex flex-col pt-10 xl:pt-[unset]"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -40,7 +39,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
                   <LazyInfoImage
                     src="/login.png"
                     alt="ثبت‌نام غیرحضوری"
-                    className="w-[140px] lg:w-[500px]"
+                    className="w-[240px] lg:w-[500px]"
                   />
                 </Suspense>
               }
@@ -56,7 +55,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
           </motion.div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="mt-12 flex justify-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -81,7 +80,7 @@ export const ServicesSection3: React.FC<ServicesSectionProps> = ({
               />
             </svg>
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );
