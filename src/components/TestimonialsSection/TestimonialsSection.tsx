@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Suspense, RefObject, lazy } from "react";
+import { RefObject } from "react";
 import { AnimatedTestimonials } from "../ui/animated-testimonials";
 import {
   containerVariants,
