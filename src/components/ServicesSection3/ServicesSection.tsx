@@ -8,8 +8,8 @@ const LazyInfoImage = lazy(
 );
 
 interface ServicesSectionProps {
-  sectionRef: RefObject<HTMLDivElement | null>;
-  scrollToSection: (sectionNumber: number) => void;
+  sectionRef?: RefObject<HTMLDivElement | null>;
+  scrollToSection?: (sectionNumber: number) => void;
 }
 
 export const ServicesSection3: React.FC<ServicesSectionProps> = ({

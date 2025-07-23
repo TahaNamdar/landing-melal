@@ -8,8 +8,8 @@ import {
 import AnimatedSlide from "../AnimatedSlide/AnimatedSlide";
 
 interface HeroSectionProps {
-  sectionRef: RefObject<HTMLDivElement | null>;
-  scrollToSection: (sectionNumber: number) => void;
+  sectionRef?: RefObject<HTMLDivElement | null>;
+  scrollToSection?: (sectionNumber: number) => void;
 }
 //bg-[url('/bg.avif')]  before:h-full before:bg-black/50 before:z-[1]
 export const HeroSection: React.FC<HeroSectionProps> = ({ sectionRef }) => {
