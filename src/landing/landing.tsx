@@ -100,7 +100,7 @@ export const LandingPage: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
-          <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <div className="text-3xl font-bold bg-gradient-to-r from-blue-50 via-purple-100 to-pink-400 bg-clip-text text-transparent">
             چوگان
           </div>
 
@@ -112,7 +112,7 @@ export const LandingPage: React.FC = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`font-medium transition-colors duration-200 ${
                   activeSection === item.id
-                    ? "text-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg"
+                    ? "text-white bg-gradient-to-r  shadow-lg"
                     : "text-blue-100 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -167,8 +167,8 @@ export const LandingPage: React.FC = () => {
       dir="rtl"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[url('/bg.avif')] bg-cover bg-center opacity-20"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-indigo-900/80 to-purple-900/80"></div>
+      <div className="absolute inset-0 bg-[url('/bg.avif')] bg-cover bg-center opacity-70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-900/70 to-purple-900/70"></div>
 
       {/* Animated Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -181,11 +181,11 @@ export const LandingPage: React.FC = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-6xl lg:text-7xl font-black leading-tight">
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-50 via-purple-100 to-pink-100 bg-clip-text text-transparent">
                   ملل تریدر
                 </span>
                 <br />
-                <span className="text-white text-4xl lg:text-5xl font-bold">
+                <span className="text-white text-xl lg:text-4xl font-bold">
                   سفری هوشمند به قله‌های مالی
                 </span>
               </h1>
@@ -198,7 +198,7 @@ export const LandingPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="group relative bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                className="group  relative bg-gradient-to-r cursor-pointer from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-2xl  hover:scale-105"
               >
                 <span className="relative z-10">مشاهده پروژه‌های چوگان</span>
                 <ChevronLeft className="mr-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
