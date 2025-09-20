@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  ChevronRight,
   Menu,
   X,
   Mail,
@@ -16,6 +15,7 @@ import {
   Layers,
   TestTube,
   ExternalLink,
+  ChevronLeft,
 } from "lucide-react";
 
 export const LandingPage: React.FC = () => {
@@ -184,40 +184,32 @@ export const LandingPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              خلق تجربه‌های
-              <span className="text-indigo-600"> دیجیتال</span>
+            <h1 className="text-5xl lg:text-4xl font-bold text-gray-900 mb-6">
+              ملل تریدر: سفری هوشمند به قله‌های مالی
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              طراح ارشد UI/UX با بیش از ۸ سال تجربه در ایجاد طراحی‌های کاربر
-              محور که نتایج کسب‌وکار را به همراه دارند و کاربران را خوشحال
-              می‌کنند.
+              با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
+              کنید
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center"
+                className="bg-indigo-600 text-white cursor-pointer px-8 py-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center"
               >
-                مشاهده کارهای من
-                <ChevronRight className="mr-2 h-5 w-5" />
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="border-2 border-indigo-600 text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-200"
-              >
-                تماس با من
+                مشاهده پروژه‌های چوگان
+                <ChevronLeft className="mr-2 h-5 w-5" />
               </button>
             </div>
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1494790108755-2616c64c29bf?w=500&h=600&fit=crop&crop=face"
-              alt="سارا احمدی"
-              className="rounded-2xl shadow-2xl"
+              src="/bg.avif"
+              alt="img"
+              className="rounded-2xl shadow-2xl w-full h-full object-cover"
             />
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-indigo-600">+۱۵۰</div>
-              <div className="text-gray-600">پروژه تکمیل شده</div>
+            <div className="absolute -bottom-6 -right-6 text-center bg-white p-6 rounded-xl shadow-lg w-[100px] h-[100px]">
+              <div className="text-2xl font-bold text-indigo-600">۱0+</div>
+              <div className="text-gray-600">پروژه </div>
             </div>
           </div>
         </div>
@@ -226,11 +218,10 @@ export const LandingPage: React.FC = () => {
       {/* Stats Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { number: "+۸", label: "سال تجربه", icon: Briefcase },
-              { number: "+۱۵۰", label: "پروژه تکمیل شده", icon: Eye },
-              { number: "+۵۰", label: "مشتری راضی", icon: Users },
+              { number: "+۵۰", label: "تیم چوگان", icon: Users },
               { number: "٪۹۵", label: "رضایت مشتری", icon: Award },
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -243,111 +234,6 @@ export const LandingPage: React.FC = () => {
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-    </section>
-  );
-
-  const AboutPage = () => (
-    <section
-      ref={aboutRef}
-      id="about"
-      className="bg-white min-h-screen"
-      dir="rtl"
-    >
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">درباره من</h2>
-            <div className="prose prose-lg text-gray-600 mb-8">
-              <p>
-                من یک طراح ارشد UI/UX پرشور با بیش از ۸ سال تجربه در تبدیل مسائل
-                پیچیده به تجربه‌های دیجیتال شهودی و زیبا هستم. رویکرد من ترکیبی
-                از تحقیق کاربری، بینش‌های مبتنی بر داده و طراحی خلاق برای ایجاد
-                محصولاتی است که کاربران دوست دارند و کسب‌وکارها آن‌ها را ارزشمند
-                می‌دانند.
-              </p>
-              <p>
-                من این افتخار را داشته‌ام که با استارتاپ‌ها، شرکت‌های فورچون ۵۰۰
-                و همه چیز در این بین کار کنم و به آن‌ها کمک کنم تا اهدافشان را
-                از طریق طراحی دقیق و استراتژی تجربه کاربری محقق کنند.
-              </p>
-            </div>
-
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                فلسفه طراحی من
-              </h3>
-              <div className="space-y-4">
-                {[
-                  "طراحی کاربر محور اختیاری نیست—ضروری است",
-                  "داده و همدلی باید هر تصمیم طراحی را راهنمایی کنند",
-                  "سادگی، نهایت پیچیدگی است",
-                  "طراحی عالی تا زمانی که گم نشود نامرئی است",
-                ].map((principle, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-indigo-600 rounded-full mt-3 ml-4 flex-shrink-0"></div>
-                    <p className="text-gray-600">{principle}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              مهارت‌ها و تخصص‌ها
-            </h3>
-            <div className="space-y-6">
-              {skills.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center">
-                      <skill.icon className="h-5 w-5 text-indigo-600 ml-2" />
-                      <span className="font-medium text-gray-900">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <span className="text-indigo-600 font-medium">
-                      ٪{skill.level}
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-indigo-600 h-2 rounded-full"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                ابزارهای من
-              </h3>
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  "فیگما",
-                  "اسکچ",
-                  "ادوبی XD",
-                  "پرینسیپل",
-                  "ایین‌ویژن",
-                  "میرو",
-                  "هاتجار",
-                  "میز",
-                  "یوزرتستینگ",
-                ].map((tool, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 p-3 rounded-lg text-center text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-200"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -429,7 +315,7 @@ export const LandingPage: React.FC = () => {
       dir="rtl"
     >
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1  gap-16">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
               بیایید با هم کار کنیم
@@ -461,82 +347,6 @@ export const LandingPage: React.FC = () => {
               ))}
             </div>
           </div>
-
-          <div className="bg-gray-50 p-8 rounded-xl">
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  نام کامل
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                  placeholder="نام کامل شما"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  آدرس ایمیل
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="project"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  نوع پروژه
-                </label>
-                <select
-                  id="project"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                >
-                  <option value="">انتخاب نوع پروژه</option>
-                  <option value="web-design">طراحی وب</option>
-                  <option value="mobile-app">اپلیکیشن موبایل</option>
-                  <option value="ui-ux-audit">بررسی UI/UX</option>
-                  <option value="design-system">سیستم طراحی</option>
-                  <option value="other">سایر</option>
-                </select>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  جزئیات پروژه
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none"
-                  placeholder="درباره پروژه، زمان‌بندی و نیازهای خاص خود بگویید..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 hover:scale-105"
-              >
-                ارسال پیام
-              </button>
-            </form>
-          </div>
         </div>
       </section>
     </section>
@@ -547,7 +357,6 @@ export const LandingPage: React.FC = () => {
       <Header />
       <main>
         <HomePage />
-        <AboutPage />
         <PortfolioPage />
         <ContactPage />
       </main>
