@@ -9,6 +9,10 @@ import {
   Award,
   Briefcase,
   ExternalLink,
+  ChevronDown,
+  TrendingUp,
+  Shield,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -161,20 +165,94 @@ export const LandingPage: React.FC = () => {
     >
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-20">
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-                ملل تریدر
-                <br />
-                <span className="text-3xl lg:text-4xl font-semibold text-gray-600">
-                  سفری هوشمند به قله‌های مالی
+        <div className="relative mb-32">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-pink-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
+          </div>
+
+          {/* Main Content */}
+          <div className="relative z-10 text-center">
+            <div className="space-y-8">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-6 py-3 mb-8">
+                <TrendingUp className="w-5 h-5 text-blue-600" />
+                <span className="text-sm font-semibold text-blue-700">
+                  پلتفرم پیشرفته معاملات مالی
                 </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
-                کنید
-              </p>
+              </div>
+
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-6xl lg:text-7xl font-black leading-tight text-gray-900">
+                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    ملل تریدر
+                  </span>
+                </h1>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-700 leading-relaxed">
+                  سفری هوشمند به قله‌های مالی
+                </h2>
+                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                  با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای
+                  مدیریت کنید
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="flex justify-center items-center pt-8">
+                <Button
+                  size="lg"
+                  onClick={() => scrollToSection("portfolio")}
+                  className="group px-10 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                >
+                  <span className="flex items-center gap-3">
+                    مشاهده محصولات
+                    <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+                  </span>
+                </Button>
+              </div>
+
+              {/* Stats Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
+                {[
+                  {
+                    number: "۱۰+",
+                    label: "سال تجربه",
+                    icon: Award,
+                    color: "text-yellow-500",
+                  },
+                  {
+                    number: "۵۰+",
+                    label: "تیم متخصص",
+                    icon: Users,
+                    color: "text-blue-500",
+                  },
+                  {
+                    number: "۹۵%",
+                    label: "رضایت مشتری",
+                    icon: Shield,
+                    color: "text-green-500",
+                  },
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="flex justify-center mb-4">
+                      <div
+                        className={`p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 group-hover:from-blue-50 group-hover:to-purple-50 transition-all duration-300 group-hover:scale-110`}
+                      >
+                        <stat.icon className={`w-8 h-8 ${stat.color}`} />
+                      </div>
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 mb-1">
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-600 font-medium">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
