@@ -180,42 +180,71 @@ export const LandingPage: React.FC = () => {
         </div>
 
         {/* Products Showcase */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="space-y-24 mb-20">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:-translate-y-2"
+              className={`group relative flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-12 lg:gap-20`}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-                  {index + 1}
+              {/* Image Section */}
+              <div className="flex-1 relative">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-80 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
+                  />
+                  {/* Floating Number Badge */}
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    {index + 1}
+                  </div>
+                  {/* Decorative Elements */}
+                  <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
+                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-full blur-xl"></div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+
+              {/* Content Section */}
+              <div className="flex-1 space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-full">
+                      محصول {index + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Features Tags */}
+                <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
+                      className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 text-sm rounded-full font-medium border border-gray-300 hover:from-blue-50 hover:to-purple-50 hover:border-blue-200 transition-all duration-300"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full">
-                  مشاهده جزئیات
-                </Button>
+
+                {/* Action Button */}
+                <div className="pt-4">
+                  <Button
+                    variant="outline"
+                    className="group/btn px-8 py-3 text-base font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                  >
+                    <span className="relative z-10">مشاهده جزئیات</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
