@@ -292,21 +292,21 @@ export const LandingPage: React.FC = () => {
         </div>
 
         {/* Roadmap Section */}
-        <div className="bg-gray-50 rounded-3xl p-8 mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-16 sm:mb-20">
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               مسیر توسعه محصولات
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               مراحل تکامل و بهبود مستمر محصولات چوگان
             </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 rounded-full"></div>
+          <div className="relative px-4">
+            {/* Timeline Line - Hidden on mobile, visible on desktop */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 rounded-full"></div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {[
                 {
                   phase: "مرحله ۱",
@@ -339,40 +339,44 @@ export const LandingPage: React.FC = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  className={`relative flex flex-col md:flex-row items-center ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Timeline Dot */}
+                  {/* Timeline Dot - Mobile: Left aligned, Desktop: Centered */}
                   <div
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white ${
+                    className={`md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-white ${
                       item.status === "completed"
                         ? "bg-green-500"
                         : item.status === "in-progress"
                         ? "bg-blue-500"
                         : "bg-gray-300"
+                    } ${
+                      index === 0
+                        ? "self-start md:self-center"
+                        : "self-start md:self-center"
                     }`}
                   ></div>
 
                   {/* Content Card */}
                   <div
-                    className={`w-5/12 ${
-                      index % 2 === 0 ? "text-left" : "text-right"
-                    }`}
+                    className={`w-full md:w-5/12 ${
+                      index % 2 === 0 ? "md:text-left" : "md:text-right"
+                    } ${index === 0 ? "mt-2 md:mt-0" : "mt-2 md:mt-0"}`}
                   >
-                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3">
+                        <span className="text-xs sm:text-sm font-semibold text-blue-600 bg-blue-100 px-2 sm:px-3 py-1 rounded-full">
                           {item.phase}
                         </span>
-                        <span className="text-sm text-gray-500">
+                        <span className="text-xs sm:text-sm text-gray-500">
                           {item.year}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -384,22 +388,24 @@ export const LandingPage: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 px-4">
           {[
             { number: "۸+", label: "سال تجربه", icon: Briefcase },
             { number: "۵۰+", label: "تیم چوگان", icon: Users },
             { number: "۹۵%", label: "رضایت مشتری", icon: Award },
           ].map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
-                  <stat.icon className="h-6 w-6 text-gray-600" />
+              <div className="flex justify-center mb-3 sm:mb-4">
+                <div className="p-3 sm:p-4 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
+                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
                 </div>
               </div>
-              <div className="text-4xl font-bold text-gray-900 mb-2">
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-sm sm:text-base text-gray-600 font-medium">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
