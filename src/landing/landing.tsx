@@ -144,7 +144,7 @@ export const LandingPage: React.FC = () => {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 text-center">
+          <div className="relative z-10 text-center bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl">
             <div className="space-y-8">
               {/* Main Title */}
               <div className="space-y-4 sm:space-y-6">
@@ -226,7 +226,9 @@ export const LandingPage: React.FC = () => {
             <div
               key={index}
               className={`group relative flex flex-col ${
-                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                index % 2 === 0
+                  ? "lg:flex-row "
+                  : "lg:flex-row-reverse bg-gray-50 rounded-2xl sm:rounded-3xl"
               } items-center gap-8 sm:gap-12 lg:gap-20 px-4`}
             >
               {/* Image Section */}
@@ -491,90 +493,83 @@ export const LandingPage: React.FC = () => {
     </section>
   );
 
-  const ContactPage = () => (
+  const Footer = () => (
     <section
       ref={contactRef}
       id="contact"
-      className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen overflow-hidden"
+      className="relative bg-gray-100 "
       dir="rtl"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[url('/bg.avif')] bg-cover bg-center opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/90 to-indigo-900/90"></div>
-
-      {/* Animated Background Elements */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-20">
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        {/* Header Section */}
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+            <span className=" text-emerald-500">تماس با ما</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             ما همیشه برای همکاری در پروژه‌های معناداری که تفاوت ایجاد می‌کنند
-            هیجان‌زده هستیم. چه به بازطراحی کامل محصول نیاز داشته باشید یا
-            بخواهید تجربه کاربری موجودتان را بهبود دهید، دوست داریم از شما
-            بشنویم.
+            هیجان‌زده هستیم. با ما در تماس باشید.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {/* Contact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 sm:mb-20">
           {[
             {
               icon: Mail,
               title: "ایمیل",
               info: "info@chogan.ir",
-              color: "from-blue-500 to-cyan-500",
-              bgColor: "from-blue-500/20 to-cyan-500/20",
+              description: "برای سوالات و همکاری",
+              color: "text-blue-600",
+              bgColor: "bg-blue-50",
+              borderColor: "border-blue-200",
             },
             {
               icon: MapPin,
               title: "موقعیت",
               info: "تهران، ایران",
-              color: "from-purple-500 to-pink-500",
-              bgColor: "from-purple-500/20 to-pink-500/20",
+              description: "دفتر مرکزی ما",
+              color: "text-purple-600",
+              bgColor: "bg-purple-50",
+              borderColor: "border-purple-200",
             },
           ].map((contact, index) => (
-            <div key={index} className="group relative">
-              <div
-                className={`relative bg-gradient-to-br ${contact.bgColor} backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105`}
-              >
-                <div className="flex items-start space-x-4">
+            <div key={index} className="group">
+              <div className=" bg-white rounded-2xl p-6 sm:px-6  border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="flex items-start gap-4">
                   <div
-                    className={`p-4 rounded-2xl bg-gradient-to-r ${contact.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    className={`p-3 sm:p-4 rounded-xl ${contact.bgColor} ${contact.borderColor} border group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <contact.icon className="w-8 h-8 text-white" />
+                    <contact.icon
+                      className={`w-6 h-6 sm:w-8 sm:h-8 ${contact.color}`}
+                    />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                       {contact.title}
                     </h3>
-                    <p className="text-blue-100 text-lg">{contact.info}</p>
+                    <p className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+                      {contact.info}
+                    </p>
+                    <p className="text-sm sm:text-base text-gray-500">
+                      {contact.description}
+                    </p>
                   </div>
                 </div>
-
-                {/* Hover Glow Effect */}
-                <div
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${contact.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`}
-                ></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-20">
-          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-            <h3 className="text-4xl font-bold text-white mb-6">
-              آماده شروع پروژه بعدی‌تان هستید؟
-            </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              با تیم چوگان همراه شوید و تجربه‌ای منحصر به فرد از طراحی و توسعه
-              را تجربه کنید
+        {/* Footer Bottom */}
+        <div className="mt-16 sm:mt-20 pt-8 border-t border-gray-200">
+          <div className="text-center">
+            <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+              اندیشه پردازان چوگان
+            </div>
+            <p className="text-sm sm:text-base text-gray-500">
+              © ۲۰۲۴ تمامی حقوق محفوظ است
             </p>
-            <button className="group relative bg-gradient-to-r from-blue-500 to-purple-600 text-white px-12 py-4 rounded-2xl font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105">
-              <span className="relative z-10">شروع همکاری</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-            </button>
           </div>
         </div>
       </section>
@@ -587,7 +582,7 @@ export const LandingPage: React.FC = () => {
       <main>
         <HomePage />
         <PortfolioPage />
-        <ContactPage />
+        <Footer />
       </main>
     </div>
   );
