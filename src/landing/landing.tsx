@@ -144,11 +144,11 @@ export const LandingPage: React.FC = () => {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src="/bg.avif"
+                src="/Analysis.png"
                 alt="ملل تریدر"
-                className="rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/20"
+                className="rounded-3xl  w-full h-[500px] object-cover"
               />
-              <div className="absolute -bottom-8 -right-8 text-center bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm">
+              <div className="absolute -bottom-10 -left-8 text-center bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm">
                 <div className="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   ۱۰+
                 </div>
