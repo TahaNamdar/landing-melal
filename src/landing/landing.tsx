@@ -219,7 +219,7 @@ export const LandingPage: React.FC = () => {
                           <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
                             <div>
                               <span className="text-xs font-semibold text-gray-700">
-                                EUR/USD
+                                عیار
                               </span>
                               <p className="text-xs text-gray-500">1.0845</p>
                             </div>
@@ -230,7 +230,7 @@ export const LandingPage: React.FC = () => {
                           <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
                             <div>
                               <span className="text-xs font-semibold text-gray-700">
-                                GBP/USD
+                                اهرم
                               </span>
                               <p className="text-xs text-gray-500">1.2650</p>
                             </div>
@@ -272,27 +272,11 @@ export const LandingPage: React.FC = () => {
                           </div>
                         </div>
                       </div>
-
-                      {/* Animated Elements */}
-                      <div className="absolute top-20 right-4 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <div className="absolute top-32 left-4 w-1 h-1 bg-blue-500 rounded-full animate-ping"></div>
-                      <div className="absolute bottom-20 right-6 w-1 h-1 bg-purple-500 rounded-full animate-pulse"></div>
                     </div>
                   </div>
 
                   {/* Phone Shadow */}
                   <div className="absolute inset-0 bg-gray-900 rounded-[2.5rem] -z-10 transform translate-y-2"></div>
-                </div>
-
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold animate-bounce">
-                  📈
-                </div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-pulse">
-                  💰
-                </div>
-                <div className="absolute top-1/2 -right-8 w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs animate-ping">
-                  ⚡
                 </div>
               </div>
             </div>
