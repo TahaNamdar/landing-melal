@@ -4,13 +4,11 @@ import {
   X,
   Mail,
   MapPin,
-  Phone,
   Eye,
   Users,
   Award,
   Briefcase,
   ExternalLink,
-  ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -163,7 +161,7 @@ export const LandingPage: React.FC = () => {
     >
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="text-center mb-20">
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
@@ -173,60 +171,167 @@ export const LandingPage: React.FC = () => {
                   سفری هوشمند به قله‌های مالی
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-xl text-gray-600 leading-relaxed">
                 با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
                 کنید
               </p>
             </div>
+          </div>
+        </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={() => scrollToSection("portfolio")}
-                size="lg"
-                className="text-base bg-blue-600 px-8 py-6 text-white cursor-pointer"
-              >
-                مشاهده پروژه‌های چوگان
-                <ChevronLeft className="mr-2 h-5 w-5" />
-              </Button>
+        {/* Products Showcase */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:-translate-y-2"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                  {index + 1}
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Button variant="outline" className="w-full">
+                  مشاهده جزئیات
+                </Button>
+              </div>
             </div>
+          ))}
+        </div>
+
+        {/* Roadmap Section */}
+        <div className="bg-gray-50 rounded-3xl p-8 mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              مسیر توسعه محصولات
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              مراحل تکامل و بهبود مستمر محصولات چوگان
+            </p>
           </div>
 
           <div className="relative">
-            <img
-              src="/Analysis.png"
-              alt="ملل تریدر"
-              className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
-            />
-            <div className="absolute -bottom-6 -right-6 text-center bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-              <div className="text-3xl font-bold text-gray-900">۱۰+</div>
-              <div className="text-gray-600 font-medium">پروژه موفق</div>
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 rounded-full"></div>
+
+            <div className="space-y-12">
+              {[
+                {
+                  phase: "مرحله ۱",
+                  title: "توسعه پلتفرم اصلی",
+                  description: "ایجاد زیرساخت معاملاتی و رابط کاربری",
+                  status: "completed",
+                  year: "۲۰۲۲",
+                },
+                {
+                  phase: "مرحله ۲",
+                  title: "اضافه کردن تحلیل‌های پیشرفته",
+                  description: "ابزارهای تحلیلی و پیش‌بینی بازار",
+                  status: "completed",
+                  year: "۲۰۲۳",
+                },
+                {
+                  phase: "مرحله ۳",
+                  title: "اپلیکیشن موبایل",
+                  description: "دسترسی آسان از طریق موبایل",
+                  status: "completed",
+                  year: "۲۰۲۴",
+                },
+                {
+                  phase: "مرحله ۴",
+                  title: "هوش مصنوعی و یادگیری ماشین",
+                  description: "الگوریتم‌های پیشرفته برای تحلیل و پیش‌بینی",
+                  status: "in-progress",
+                  year: "۲۰۲۵",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`relative flex items-center ${
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  }`}
+                >
+                  {/* Timeline Dot */}
+                  <div
+                    className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white ${
+                      item.status === "completed"
+                        ? "bg-green-500"
+                        : item.status === "in-progress"
+                        ? "bg-blue-500"
+                        : "bg-gray-300"
+                    }`}
+                  ></div>
+
+                  {/* Content Card */}
+                  <div
+                    className={`w-5/12 ${
+                      index % 2 === 0 ? "text-left" : "text-right"
+                    }`}
+                  >
+                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                          {item.phase}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {item.year}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { number: "۸+", label: "سال تجربه", icon: Briefcase },
-              { number: "۵۰+", label: "تیم چوگان", icon: Users },
-              { number: "۹۵%", label: "رضایت مشتری", icon: Award },
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
-                    <stat.icon className="h-6 w-6 text-gray-600" />
-                  </div>
+        {/* Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { number: "۸+", label: "سال تجربه", icon: Briefcase },
+            { number: "۵۰+", label: "تیم چوگان", icon: Users },
+            { number: "۹۵%", label: "رضایت مشتری", icon: Award },
+          ].map((stat, index) => (
+            <div key={index} className="text-center group">
+              <div className="flex justify-center mb-4">
+                <div className="p-3 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
+                  <stat.icon className="h-6 w-6 text-gray-600" />
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
-            ))}
-          </div>
+              <div className="text-4xl font-bold text-gray-900 mb-2">
+                {stat.number}
+              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </section>
     </section>
@@ -401,7 +506,8 @@ export const LandingPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
+      <Header />
       <main>
         <HomePage />
         <PortfolioPage />
