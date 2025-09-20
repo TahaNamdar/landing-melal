@@ -97,17 +97,10 @@ export const LandingPage: React.FC = () => {
     <section
       ref={homeRef}
       id="home"
-      className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen overflow-hidden"
+      className="relative bg-white  min-h-screen overflow-hidden"
       dir="rtl"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[url('/bg.avif')] bg-cover bg-center opacity-70"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-900/70 to-purple-900/70"></div>
-
       {/* Animated Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
 
       {/* Hero Section */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -115,15 +108,13 @@ export const LandingPage: React.FC = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-6xl lg:text-7xl font-black leading-tight">
-                <span className="bg-gradient-to-r from-blue-50 via-purple-100 to-pink-100 bg-clip-text text-transparent">
-                  ملل تریدر
-                </span>
+                <span className="text-blue-900 bg-clip-text ">ملل تریدر</span>
                 <br />
-                <span className="text-white text-xl lg:text-4xl font-bold">
+                <span className="text-black text-xl lg:text-4xl font-bold">
                   سفری هوشمند به قله‌های مالی
                 </span>
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed max-w-2xl">
+              <p className="text-xl text-black leading-relaxed max-w-2xl">
                 با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
                 کنید
               </p>
@@ -157,14 +148,12 @@ export const LandingPage: React.FC = () => {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-80 animate-bounce"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-80 animate-bounce delay-1000"></div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border-t border-white/20 py-20">
+      <section className="relative z-10 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border-t border-white/20 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -190,13 +179,13 @@ export const LandingPage: React.FC = () => {
               <div key={index} className="text-center group">
                 <div className="flex justify-center mb-6">
                   <div
-                    className={`p-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    className={`p-3 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <stat.icon className="h-8 w-8 text-white" />
+                    <stat.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
                 <div
-                  className={`text-5xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3`}
+                  className={`text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3`}
                 >
                   {stat.number}
                 </div>
