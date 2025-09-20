@@ -183,7 +183,7 @@ export const LandingPage: React.FC = () => {
               <Button
                 onClick={() => scrollToSection("portfolio")}
                 size="lg"
-                className="text-lg px-8 py-6"
+                className="text-base bg-blue-600 px-8 py-6 text-white cursor-pointer"
               >
                 مشاهده پروژه‌های چوگان
                 <ChevronLeft className="mr-2 h-5 w-5" />
