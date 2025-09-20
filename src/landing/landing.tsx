@@ -134,49 +134,49 @@ export const LandingPage: React.FC = () => {
       dir="rtl"
     >
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="relative mb-32">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+        <div className="relative mb-16 sm:mb-24 lg:mb-32">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-pink-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-pink-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
           </div>
 
           {/* Main Content */}
           <div className="relative z-10 text-center">
             <div className="space-y-8">
               {/* Main Title */}
-              <div className="space-y-6">
-                <h1 className="text-6xl lg:text-7xl font-black leading-tight text-gray-900">
+              <div className="space-y-4 sm:space-y-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gray-900">
                   <span className="text-emerald-400 bg-clip-text">
                     ملل تریدر
                   </span>
                 </h1>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-700 leading-relaxed">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-700 leading-relaxed">
                   سفری هوشمند به قله‌های مالی
                 </h2>
-                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto px-4">
                   با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای
                   مدیریت کنید
                 </p>
               </div>
 
               {/* CTA Button */}
-              <div className="flex justify-center items-center pt-8">
+              <div className="flex justify-center items-center pt-6 sm:pt-8">
                 <div
                   onClick={() => scrollToSection("portfolio")}
-                  className="inline-flex cursor-pointer items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-6 py-3 mb-8"
+                  className="inline-flex cursor-pointer items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-8 hover:scale-105 transition-transform duration-300"
                 >
-                  <TrendingUp className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-semibold text-blue-700">
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                  <span className="text-xs sm:text-sm font-semibold text-blue-700">
                     پلتفرم پیشرفته معاملات مالی
                   </span>
                 </div>
               </div>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-12 sm:pt-16 max-w-4xl mx-auto px-4">
                 {[
                   {
                     number: "۱۰+",
@@ -198,17 +198,19 @@ export const LandingPage: React.FC = () => {
                   },
                 ].map((stat, index) => (
                   <div key={index} className="text-center group">
-                    <div className="flex justify-center mb-4">
+                    <div className="flex justify-center mb-3 sm:mb-4">
                       <div
-                        className={`p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 group-hover:from-blue-50 group-hover:to-purple-50 transition-all duration-300 group-hover:scale-110`}
+                        className={`p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 group-hover:from-blue-50 group-hover:to-purple-50 transition-all duration-300 group-hover:scale-110`}
                       >
-                        <stat.icon className={`w-8 h-8 ${stat.color}`} />
+                        <stat.icon
+                          className={`w-6 h-6 sm:w-8 sm:h-8 ${stat.color}`}
+                        />
                       </div>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-1">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
                       {stat.number}
                     </div>
-                    <div className="text-gray-600 font-medium">
+                    <div className="text-sm sm:text-base text-gray-600 font-medium">
                       {stat.label}
                     </div>
                   </div>
@@ -219,55 +221,55 @@ export const LandingPage: React.FC = () => {
         </div>
 
         {/* Products Showcase */}
-        <div className="space-y-24 mb-20">
+        <div className="space-y-16 sm:space-y-20 lg:space-y-24 mb-16 sm:mb-20">
           {projects.map((project, index) => (
             <div
               key={index}
               className={`group relative flex flex-col ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-12 lg:gap-20`}
+              } items-center gap-8 sm:gap-12 lg:gap-20 px-4`}
             >
               {/* Image Section */}
-              <div className="flex-1 relative">
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+              <div className="flex-1 relative w-full">
+                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 lg:p-8">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-80 object-contain rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
+                    className="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-xl sm:rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
                   />
                   {/* Floating Number Badge */}
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                     {index + 1}
                   </div>
                   {/* Decorative Elements */}
-                  <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
-                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
+                  <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-full blur-xl"></div>
                 </div>
               </div>
 
               {/* Content Section */}
-              <div className="flex-1 space-y-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
+              <div className="flex-1 space-y-4 sm:space-y-6 w-full">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-full">
+                    <span className="text-xs sm:text-sm font-semibold text-blue-600 bg-blue-50 px-3 sm:px-4 py-1 sm:py-2 rounded-full">
                       محصول {index + 1}
                     </span>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Features Tags */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 text-sm rounded-full font-medium border border-gray-300 hover:from-blue-50 hover:to-purple-50 hover:border-blue-200 transition-all duration-300"
+                      className="px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 text-xs sm:text-sm rounded-full font-medium border border-gray-300 hover:from-blue-50 hover:to-purple-50 hover:border-blue-200 transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -275,10 +277,10 @@ export const LandingPage: React.FC = () => {
                 </div>
 
                 {/* Action Button */}
-                <div className="pt-4">
+                <div className="pt-3 sm:pt-4">
                   <Button
                     variant="outline"
-                    className="group/btn px-8 py-3 text-base font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                    className="group/btn px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
                   >
                     <span className="relative z-10">مشاهده جزئیات</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
