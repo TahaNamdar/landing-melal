@@ -9,11 +9,6 @@ import {
   Users,
   Award,
   Briefcase,
-  Code,
-  Palette,
-  Smartphone,
-  Layers,
-  TestTube,
   ExternalLink,
   ChevronLeft,
 } from "lucide-react";
@@ -80,8 +75,7 @@ export const LandingPage: React.FC = () => {
     {
       title: "بازطراحی پلتفرم فروشگاهی",
       description: "بهبود تجربه کاربری که منجر به افزایش ۴۰٪ تبدیل شد",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+      image: "/Moving.png",
       tags: ["تحقیق کاربری", "نمونه‌سازی", "تست A/B"],
     },
     {
@@ -98,15 +92,6 @@ export const LandingPage: React.FC = () => {
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
       tags: ["تجسم داده", "UX سازمانی", "سیستم طراحی"],
     },
-  ];
-
-  const skills = [
-    { name: "تحقیق کاربری", level: 95, icon: Users },
-    { name: "نمونه‌سازی", level: 90, icon: Layers },
-    { name: "طراحی بصری", level: 85, icon: Palette },
-    { name: "طراحی تعامل", level: 92, icon: Smartphone },
-    { name: "سیستم طراحی", level: 88, icon: Code },
-    { name: "تست قابلیت استفاده", level: 90, icon: TestTube },
   ];
 
   const Header = () => (
