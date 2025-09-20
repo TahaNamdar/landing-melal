@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  Menu,
-  X,
   Mail,
   MapPin,
   Eye,
@@ -9,10 +7,8 @@ import {
   Award,
   Briefcase,
   ExternalLink,
-  ChevronDown,
   TrendingUp,
   Shield,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -98,40 +94,14 @@ export const LandingPage: React.FC = () => {
 
   const Header = () => (
     <header
-      className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200/50"
+      className="bg-white/95 backdrop-blur-md  sticky top-0 z-50"
       dir="rtl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
-          <div className="text-3xl font-bold text-gray-900">چوگان</div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-reverse space-x-8">
-            {navigation.map((item) => (
-              <Button
-                key={item.id}
-                variant={activeSection === item.id ? "default" : "ghost"}
-                onClick={() => scrollToSection(item.id)}
-                className="font-medium"
-              >
-                {item.name}
-              </Button>
-            ))}
-          </nav>
-
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
+          <div className="text-xl font-bold text-black border-b border-gray-300 pb-2">
+            اندیشه پردازان چوگان
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -176,18 +146,10 @@ export const LandingPage: React.FC = () => {
           {/* Main Content */}
           <div className="relative z-10 text-center">
             <div className="space-y-8">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-6 py-3 mb-8">
-                <TrendingUp className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-semibold text-blue-700">
-                  پلتفرم پیشرفته معاملات مالی
-                </span>
-              </div>
-
               {/* Main Title */}
               <div className="space-y-6">
                 <h1 className="text-6xl lg:text-7xl font-black leading-tight text-gray-900">
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="text-emerald-400 bg-clip-text">
                     ملل تریدر
                   </span>
                 </h1>
@@ -202,16 +164,15 @@ export const LandingPage: React.FC = () => {
 
               {/* CTA Button */}
               <div className="flex justify-center items-center pt-8">
-                <Button
-                  size="lg"
+                <div
                   onClick={() => scrollToSection("portfolio")}
-                  className="group px-10 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="inline-flex cursor-pointer items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-6 py-3 mb-8"
                 >
-                  <span className="flex items-center gap-3">
-                    مشاهده محصولات
-                    <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+                  <TrendingUp className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm font-semibold text-blue-700">
+                    پلتفرم پیشرفته معاملات مالی
                   </span>
-                </Button>
+                </div>
               </div>
 
               {/* Stats Row */}
@@ -272,7 +233,7 @@ export const LandingPage: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-80 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
+                    className="w-full h-80 object-contain rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
                   />
                   {/* Floating Number Badge */}
                   <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
@@ -474,7 +435,7 @@ export const LandingPage: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-56 object-contain group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
