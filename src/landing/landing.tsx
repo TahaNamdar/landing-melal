@@ -148,7 +148,7 @@ export const LandingPage: React.FC = () => {
 
           {/* Main Content */}
           <div className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8  items-center">
               {/* Text Content */}
               <div className="text-center lg:text-right space-y-4 sm:space-y-6">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gray-900">
@@ -166,7 +166,7 @@ export const LandingPage: React.FC = () => {
               </div>
 
               {/* Mobile Phone Mockup */}
-              <div className="relative flex justify-center lg:justify-start">
+              <div className="relative flex justify-center lg:justify-center">
                 <div className="relative w-64 h-[500px] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
                   {/* Phone Frame */}
                   <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
