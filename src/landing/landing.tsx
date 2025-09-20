@@ -12,6 +12,7 @@ import {
   ExternalLink,
   ChevronLeft,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const LandingPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,105 +94,136 @@ export const LandingPage: React.FC = () => {
     },
   ];
 
+  const Header = () => (
+    <header
+      className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200/50"
+      dir="rtl"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-6">
+          <div className="text-3xl font-bold text-gray-900">چوگان</div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-reverse space-x-8">
+            {navigation.map((item) => (
+              <Button
+                key={item.id}
+                variant={activeSection === item.id ? "default" : "ghost"}
+                onClick={() => scrollToSection(item.id)}
+                className="font-medium"
+              >
+                {item.name}
+              </Button>
+            ))}
+          </nav>
+
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200/50">
+            {navigation.map((item) => (
+              <Button
+                key={item.id}
+                variant={activeSection === item.id ? "default" : "ghost"}
+                onClick={() => {
+                  scrollToSection(item.id);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full justify-start mb-2"
+              >
+                {item.name}
+              </Button>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+  );
+
   const HomePage = () => (
     <section
       ref={homeRef}
       id="home"
-      className="relative bg-white  min-h-screen overflow-hidden"
+      className="relative bg-white min-h-screen"
       dir="rtl"
     >
-      {/* Animated Background Elements */}
-
       {/* Hero Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-black leading-tight">
-                <span className="text-blue-900 bg-clip-text ">ملل تریدر</span>
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+                ملل تریدر
                 <br />
-                <span className="text-black text-xl lg:text-4xl font-bold">
+                <span className="text-3xl lg:text-4xl font-semibold text-gray-600">
                   سفری هوشمند به قله‌های مالی
                 </span>
               </h1>
-              <p className="text-xl text-black leading-relaxed max-w-2xl">
+              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                 با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای مدیریت
                 کنید
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <button
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
                 onClick={() => scrollToSection("portfolio")}
-                className="group  relative bg-gradient-to-r cursor-pointer from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-2xl  hover:scale-105"
+                size="lg"
+                className="text-lg px-8 py-6"
               >
-                <span className="relative z-10">مشاهده پروژه‌های چوگان</span>
-                <ChevronLeft className="mr-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-              </button>
+                مشاهده پروژه‌های چوگان
+                <ChevronLeft className="mr-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative z-10">
-              <img
-                src="/Analysis.png"
-                alt="ملل تریدر"
-                className="rounded-3xl  w-full h-[500px] object-cover"
-              />
-              <div className="absolute -bottom-10 -left-8 text-center bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm">
-                <div className="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  ۱۰+
-                </div>
-                <div className="text-slate-600 font-semibold">پروژه موفق</div>
-              </div>
+            <img
+              src="/Analysis.png"
+              alt="ملل تریدر"
+              className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
+            />
+            <div className="absolute -bottom-6 -right-6 text-center bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+              <div className="text-3xl font-bold text-gray-900">۱۰+</div>
+              <div className="text-gray-600 font-medium">پروژه موفق</div>
             </div>
-
-            {/* Floating Elements */}
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border-t border-white/20 py-10">
+      <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                number: "۸+",
-                label: "سال تجربه",
-                icon: Briefcase,
-                color: "from-blue-400 to-cyan-400",
-              },
-              {
-                number: "۵۰+",
-                label: "تیم چوگان",
-                icon: Users,
-                color: "from-purple-400 to-pink-400",
-              },
-              {
-                number: "۹۵%",
-                label: "رضایت مشتری",
-                icon: Award,
-                color: "from-green-400 to-emerald-400",
-              },
+              { number: "۸+", label: "سال تجربه", icon: Briefcase },
+              { number: "۵۰+", label: "تیم چوگان", icon: Users },
+              { number: "۹۵%", label: "رضایت مشتری", icon: Award },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="flex justify-center mb-6">
-                  <div
-                    className={`p-3 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <stat.icon className="h-6 w-6 text-white" />
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
+                    <stat.icon className="h-6 w-6 text-gray-600" />
                   </div>
                 </div>
-                <div
-                  className={`text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3`}
-                >
+                <div className="text-4xl font-bold text-gray-900 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-blue-100 text-lg font-semibold">
-                  {stat.label}
-                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -204,13 +236,10 @@ export const LandingPage: React.FC = () => {
     <section
       ref={portfolioRef}
       id="portfolio"
-      className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen"
+      className="bg-white min-h-screen"
       dir="rtl"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-20">
           <h2 className="text-6xl font-black mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -299,11 +328,6 @@ export const LandingPage: React.FC = () => {
 
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-20">
-          <h2 className="text-6xl font-black mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              بیایید با هم کار کنیم
-            </span>
-          </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
             ما همیشه برای همکاری در پروژه‌های معناداری که تفاوت ایجاد می‌کنند
             هیجان‌زده هستیم. چه به بازطراحی کامل محصول نیاز داشته باشید یا
@@ -327,13 +351,6 @@ export const LandingPage: React.FC = () => {
               info: "تهران، ایران",
               color: "from-purple-500 to-pink-500",
               bgColor: "from-purple-500/20 to-pink-500/20",
-            },
-            {
-              icon: Phone,
-              title: "تلفن",
-              info: "۰۹۱۲۳۴۵۶۷۸۹",
-              color: "from-green-500 to-emerald-500",
-              bgColor: "from-green-500/20 to-emerald-500/20",
             },
           ].map((contact, index) => (
             <div key={index} className="group relative">
