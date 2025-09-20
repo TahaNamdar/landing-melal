@@ -16,6 +16,7 @@ export const LandingPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolling, setIsScrolling] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -44,6 +45,8 @@ export const LandingPage: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (isScrolling) return;
+
+      setScrollY(window.scrollY);
 
       const sections = [
         { id: "home", ref: homeRef },
@@ -144,10 +147,10 @@ export const LandingPage: React.FC = () => {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 text-center bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl">
-            <div className="space-y-8">
-              {/* Main Title */}
-              <div className="space-y-4 sm:space-y-6">
+          <div className="relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Text Content */}
+              <div className="text-center lg:text-right space-y-4 sm:space-y-6">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gray-900">
                   <span className="text-emerald-400 bg-clip-text">
                     ملل تریدر
@@ -156,12 +159,148 @@ export const LandingPage: React.FC = () => {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-700 leading-relaxed">
                   سفری هوشمند به قله‌های مالی
                 </h2>
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto px-4">
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 px-4">
                   با پلتفرم پیشرفته ما، معاملات خود را سریع، امن و حرفه‌ای
                   مدیریت کنید
                 </p>
               </div>
 
+              {/* Mobile Phone Mockup */}
+              <div className="relative flex justify-center lg:justify-start">
+                <div className="relative w-64 h-[500px] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
+                  {/* Phone Frame */}
+                  <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                    {/* Status Bar */}
+                    <div className="bg-gray-50 h-8 flex items-center justify-between px-4 text-xs font-medium text-gray-600">
+                      <span>9:41</span>
+                      <div className="flex items-center gap-1">
+                        <div className="w-4 h-2 bg-gray-400 rounded-sm"></div>
+                        <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* App Content */}
+                    <div className="h-[calc(100%-2rem)] bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+                      {/* Trading Dashboard Sections */}
+                      <div className="p-4 space-y-4">
+                        {/* Header */}
+                        <div className="text-center">
+                          <h3 className="text-sm font-bold text-gray-800">
+                            ملل تریدر
+                          </h3>
+                          <p className="text-xs text-gray-600">
+                            پلتفرم معاملاتی
+                          </p>
+                        </div>
+
+                        {/* Chart Section */}
+                        <div className="bg-white rounded-lg p-3 shadow-sm">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-xs font-semibold text-gray-700">
+                              نمودار قیمت
+                            </span>
+                            <span className="text-xs text-green-600">
+                              +2.5%
+                            </span>
+                          </div>
+                          <div className="h-16 bg-gray-50 rounded flex items-end justify-between px-2">
+                            <div className="w-1 bg-blue-500 h-8 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-12 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-6 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-10 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-14 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-8 rounded-t"></div>
+                            <div className="w-1 bg-blue-500 h-11 rounded-t"></div>
+                          </div>
+                        </div>
+
+                        {/* Trading Pairs */}
+                        <div className="space-y-2">
+                          <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
+                            <div>
+                              <span className="text-xs font-semibold text-gray-700">
+                                EUR/USD
+                              </span>
+                              <p className="text-xs text-gray-500">1.0845</p>
+                            </div>
+                            <span className="text-xs text-green-600">
+                              +0.12%
+                            </span>
+                          </div>
+                          <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
+                            <div>
+                              <span className="text-xs font-semibold text-gray-700">
+                                GBP/USD
+                              </span>
+                              <p className="text-xs text-gray-500">1.2650</p>
+                            </div>
+                            <span className="text-xs text-red-600">-0.08%</span>
+                          </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="grid grid-cols-2 gap-2">
+                          <button className="bg-green-500 text-white text-xs py-2 rounded-lg font-semibold">
+                            خرید
+                          </button>
+                          <button className="bg-red-500 text-white text-xs py-2 rounded-lg font-semibold">
+                            فروش
+                          </button>
+                        </div>
+
+                        {/* Bottom Navigation */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+                          <div className="flex justify-around py-2">
+                            <div className="text-center">
+                              <div className="w-6 h-6 bg-blue-500 rounded mx-auto mb-1"></div>
+                              <span className="text-xs text-blue-500">
+                                معاملات
+                              </span>
+                            </div>
+                            <div className="text-center">
+                              <div className="w-6 h-6 bg-gray-300 rounded mx-auto mb-1"></div>
+                              <span className="text-xs text-gray-400">
+                                تحلیل
+                              </span>
+                            </div>
+                            <div className="text-center">
+                              <div className="w-6 h-6 bg-gray-300 rounded mx-auto mb-1"></div>
+                              <span className="text-xs text-gray-400">
+                                پروفایل
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Animated Elements */}
+                      <div className="absolute top-20 right-4 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <div className="absolute top-32 left-4 w-1 h-1 bg-blue-500 rounded-full animate-ping"></div>
+                      <div className="absolute bottom-20 right-6 w-1 h-1 bg-purple-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  {/* Phone Shadow */}
+                  <div className="absolute inset-0 bg-gray-900 rounded-[2.5rem] -z-10 transform translate-y-2"></div>
+                </div>
+
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold animate-bounce">
+                  📈
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-pulse">
+                  💰
+                </div>
+                <div className="absolute top-1/2 -right-8 w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs animate-ping">
+                  ⚡
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="relative z-10 mt-12">
+            <div className="text-center bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl">
               {/* CTA Button */}
               <div className="flex justify-center items-center pt-6 sm:pt-8">
                 <div
