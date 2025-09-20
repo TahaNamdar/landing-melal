@@ -93,72 +93,6 @@ export const LandingPage: React.FC = () => {
     },
   ];
 
-  const Header = () => (
-    <header
-      className="bg-gradient-to-r from-slate-900/95 via-blue-900/95 to-indigo-900/95 backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-white/10"
-      dir="rtl"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
-          <div className="text-3xl font-bold bg-gradient-to-r from-blue-50 via-purple-100 to-pink-400 bg-clip-text text-transparent">
-            چوگان
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-reverse space-x-8">
-            {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`font-medium transition-colors duration-200 ${
-                  activeSection === item.id
-                    ? "text-white bg-gradient-to-r  shadow-lg"
-                    : "text-blue-100 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-blue-100 hover:bg-white/10 transition-colors duration-200"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
-            {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  scrollToSection(item.id);
-                  setIsMenuOpen(false);
-                }}
-                className={`block w-full text-right py-3 px-4 font-medium transition-all duration-200 rounded-lg ${
-                  activeSection === item.id
-                    ? "text-white bg-gradient-to-r from-blue-500 to-purple-500"
-                    : "text-blue-100 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-    </header>
-  );
-
   const HomePage = () => (
     <section
       ref={homeRef}
@@ -462,7 +396,6 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <Header />
       <main>
         <HomePage />
         <PortfolioPage />
