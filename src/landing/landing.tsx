@@ -106,8 +106,9 @@ export const LandingPage: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
-          <div className="text-xl font-bold text-black border-b border-gray-100 pb-2">
-            اندیشه پردازان <span className="text-emerald-600">چوگان</span>
+          <div className="text-xl font-bold text-black border-b border-emerald-100 pb-2 flex items-center gap-1">
+            <img src="/chogan.jpg" alt="logo" className="w-10 h-10" />
+            اندیشه پردازان <span className="text-emerald-800">چوگان</span>
           </div>
         </div>
 
