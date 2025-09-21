@@ -80,6 +80,7 @@ export const LandingPage: React.FC = () => {
         "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
       image: "/Moving.png",
       tags: ["معاملات مالی", "امنیت بالا", "رابط کاربری"],
+      link: "https://melaltrader.ir/migration",
     },
     {
       title: "ملل تریدر",
@@ -87,12 +88,14 @@ export const LandingPage: React.FC = () => {
         "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید",
       image: "/Analysis.png",
       tags: ["تحلیل داده", "هوش مصنوعی", "پیش‌بینی"],
+      link: "https://melaltrader.ir",
     },
     {
       title: "ثبت‌نام غیرحضوری",
       description: "فرآیند ثبت‌نام ساده و سریع",
       image: "/online.png",
       tags: ["دسترسی آسان", "تجربه کاربری"],
+      link: "https://portal.melaltrader.ir/",
     },
   ];
 
@@ -406,7 +409,8 @@ export const LandingPage: React.FC = () => {
                 <div className="pt-3 sm:pt-4">
                   <Button
                     variant="outline"
-                    className="group/btn px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                    className="group/btn cursor-pointer px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                    onClick={() => window.open(project.link, "_blank")}
                   >
                     <span className="relative z-10">مشاهده جزئیات</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
@@ -541,9 +545,9 @@ export const LandingPage: React.FC = () => {
     >
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-20">
-          <h2 className="text-6xl font-black mb-6">
+          <h2 className="text-5xl font-black mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              پروژه‌های برجسته
+              پروژه‌های ما
             </span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -588,8 +592,11 @@ export const LandingPage: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <button className="group/btn text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-300 flex items-center hover:translate-x-2">
-                  مشاهده مطالعه موردی
+                <button
+                  onClick={() => window.open(project.link, "_blank")}
+                  className="group/btn cursor-pointer text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-300 flex items-center hover:translate-x-2"
+                >
+                  مشاهده سامانه
                   <ExternalLink className="mr-2 h-5 w-5 group-hover/btn:rotate-12 transition-transform duration-300" />
                 </button>
               </div>
