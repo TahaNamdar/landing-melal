@@ -75,23 +75,24 @@ export const LandingPage: React.FC = () => {
 
   const projects = [
     {
-      title: "پلتفرم معاملاتی ملل تریدر",
+      title: "انتقال به ملل تریدر",
       description:
-        "سیستم پیشرفته معاملات مالی با رابط کاربری مدرن و امنیت بالا",
+        "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
       image: "/Moving.png",
       tags: ["معاملات مالی", "امنیت بالا", "رابط کاربری"],
     },
     {
-      title: "سامانه تحلیل بازار",
-      description: "ابزارهای تحلیلی پیشرفته برای تصمیم‌گیری هوشمند در بازار",
+      title: "ملل تریدر",
+      description:
+        "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید",
       image: "/Analysis.png",
       tags: ["تحلیل داده", "هوش مصنوعی", "پیش‌بینی"],
     },
     {
-      title: "اپلیکیشن موبایل چوگان",
-      description: "دسترسی آسان و سریع به تمام امکانات پلتفرم از طریق موبایل",
+      title: "ثبت‌نام غیرحضوری",
+      description: "فرآیند ثبت‌نام ساده و سریع",
       image: "/online.png",
-      tags: ["موبایل", "دسترسی آسان", "تجربه کاربری"],
+      tags: ["دسترسی آسان", "تجربه کاربری"],
     },
   ];
 
@@ -435,31 +436,27 @@ export const LandingPage: React.FC = () => {
               {[
                 {
                   phase: "مرحله ۱",
-                  title: "توسعه پلتفرم اصلی",
-                  description: "ایجاد زیرساخت معاملاتی و رابط کاربری",
+                  title: "                  شروع داستان سرمایه‌گذاری شما",
+                  description:
+                    "با ثبت‌نام غیرحضوری در ملل تریدر، در کمتر از چند دقیقه به دنیای معاملات حرفه‌ای قدم بگذارید",
                   status: "completed",
                   year: "۲۰۲۲",
                 },
                 {
                   phase: "مرحله ۲",
-                  title: "اضافه کردن تحلیل‌های پیشرفته",
-                  description: "ابزارهای تحلیلی و پیش‌بینی بازار",
+                  title: "ادامه داستان شما",
+                  description:
+                    "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید",
                   status: "completed",
                   year: "۲۰۲۳",
                 },
                 {
                   phase: "مرحله ۳",
-                  title: "اپلیکیشن موبایل",
-                  description: "دسترسی آسان از طریق موبایل",
+                  title: "فصل جدیدی با ملل تریدر",
+                  description:
+                    "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید",
                   status: "completed",
                   year: "۲۰۲۴",
-                },
-                {
-                  phase: "مرحله ۴",
-                  title: "هوش مصنوعی و یادگیری ماشین",
-                  description: "الگوریتم‌های پیشرفته برای تحلیل و پیش‌بینی",
-                  status: "in-progress",
-                  year: "۲۰۲۵",
                 },
               ].map((item, index) => (
                 <div
@@ -494,14 +491,11 @@ export const LandingPage: React.FC = () => {
                         <span className="text-xs sm:text-sm font-semibold text-blue-600 bg-blue-100 px-2 sm:px-3 py-1 rounded-full">
                           {item.phase}
                         </span>
-                        <span className="text-xs sm:text-sm text-gray-500">
-                          {item.year}
-                        </span>
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-base text-right sm:text-lg font-bold text-gray-900 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed text-right">
                         {item.description}
                       </p>
                     </div>
@@ -606,12 +600,12 @@ export const LandingPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20">
+        {/* <div className="text-center mt-20">
           <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105">
             <span className="relative z-10">مشاهده همه پروژه‌ها</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
           </button>
-        </div>
+        </div> */}
       </section>
     </section>
   );
