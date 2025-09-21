@@ -370,9 +370,6 @@ export const LandingPage: React.FC = () => {
                   <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
                     {index + 1}
                   </div>
-                  {/* Decorative Elements */}
-                  <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
-                  <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-full blur-xl"></div>
                 </div>
               </div>
 
