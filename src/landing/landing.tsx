@@ -634,7 +634,7 @@ export const LandingPage: React.FC = () => {
             },
           ].map((contact, index) => (
             <div key={index} className="group">
-              <div className=" bg-white rounded-2xl p-6 sm:px-6  border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className=" bg-white rounded-2xl py-3 sm:px-6  border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="flex items-start gap-4">
                   <div
                     className={`p-3 sm:p-4 rounded-xl ${contact.bgColor} ${contact.borderColor} border group-hover:scale-110 transition-transform duration-300`}
@@ -644,13 +644,13 @@ export const LandingPage: React.FC = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-lg font-bold text-gray-900 mb-2">
                       {contact.title}
                     </h3>
-                    <p className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+                    <p className="text-lg sm:text-base font-semibold text-gray-700 mb-2">
                       {contact.info}
                     </p>
-                    <p className="text-sm sm:text-base text-gray-500">
+                    <p className="text-sm sm:text-sm text-gray-500">
                       {contact.description}
                     </p>
                   </div>
