@@ -364,7 +364,7 @@ export const LandingPage: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-xl sm:rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
+                    className="w-full h-42 sm:h-72 lg:h-80 object-contain rounded-xl sm:rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
                   />
                 </div>
               </div>
@@ -372,7 +372,7 @@ export const LandingPage: React.FC = () => {
               {/* Content Section */}
               <div className="flex-1 space-y-4 sm:space-y-6 w-full">
                 <div className="space-y-3 sm:space-y-4">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-500 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-xl text-center sm:text-right sm:text-3xl lg:text-4xl font-bold text-blue-500 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
