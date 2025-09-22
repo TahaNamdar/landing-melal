@@ -293,17 +293,17 @@ export const LandingPage: React.FC = () => {
               <div className="flex justify-center items-center pt-6 sm:pt-8">
                 <div
                   onClick={() => scrollToSection("portfolio")}
-                  className="inline-flex cursor-pointer items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-8 hover:scale-105 transition-transform duration-300"
+                  className="inline-flex cursor-pointer items-center gap-2 sm:gap-3 w-[80%] md:w-[300px] justify-center  bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-8 hover:scale-105 transition-transform duration-300"
                 >
                   <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700">
+                  <span className="text-md sm:text-sm font-semibold text-blue-700">
                     پروژه ها
                   </span>
                 </div>
               </div>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-12 sm:pt-16 max-w-4xl mx-auto px-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 pt-12 sm:pt-16 max-w-4xl mx-auto px-4">
                 {[
                   {
                     number: "۱۰+",
@@ -497,18 +497,18 @@ export const LandingPage: React.FC = () => {
     >
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-black mb-6">
+          <h2 className="text-4xl sm:text-5xl font-black mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               پروژه‌های ما
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-md sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             مجموعه‌ای از پروژه‌هایی که رویکرد ما را در حل چالش‌های پیچیده طراحی
             و ایجاد تجربه‌های کاربری معنادار نشان می‌دهند.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -608,7 +608,7 @@ export const LandingPage: React.FC = () => {
             },
           ].map((contact, index) => (
             <div key={index} className="group">
-              <div className=" bg-white rounded-2xl py-3 sm:px-6   border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className=" bg-white rounded-2xl py-3 px-3 sm:px-6   border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="flex items-start gap-4">
                   <div
                     className={`p-3 sm:p-4 rounded-xl ${contact.bgColor} ${contact.borderColor} border group-hover:scale-110 transition-transform duration-300`}
@@ -618,13 +618,13 @@ export const LandingPage: React.FC = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-xs sm:text-base font-bold text-gray-900 mb-2">
                       {contact.title}
                     </h3>
-                    <p className="text-lg sm:text-base font-semibold text-gray-700 mb-2">
+                    <p className="text-xs sm:text-base font-semibold text-gray-700 mb-2">
                       {contact.info}
                     </p>
-                    <p className="text-sm sm:text-sm text-gray-500">
+                    <p className="text-xs sm:text-sm text-gray-500">
                       {contact.description}
                     </p>
                   </div>
@@ -637,10 +637,10 @@ export const LandingPage: React.FC = () => {
         {/* Footer Bottom */}
         <div className="mt-16 sm:mt-20 pt-8 border-t border-gray-200">
           <div className="text-center">
-            <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+            <div className="text-xs sm:text-lg font-bold text-gray-900 mb-2">
               اندیشه پردازان چوگان
             </div>
-            <p className="text-sm sm:text-base text-gray-500">
+            <p className="text-xs sm:text-base text-gray-500">
               © ۲۰۲۴ تمامی حقوق محفوظ است
             </p>
           </div>
