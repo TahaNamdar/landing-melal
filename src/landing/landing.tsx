@@ -5,7 +5,6 @@ import {
   Eye,
   Users,
   Award,
-  Briefcase,
   ExternalLink,
   TrendingUp,
   Shield,
@@ -16,7 +15,7 @@ export const LandingPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolling, setIsScrolling] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [_, setScrollY] = useState(0);
 
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
