@@ -76,7 +76,7 @@ export const LandingPage: React.FC = () => {
     {
       title: "انتقال به ملل تریدر",
       description:
-        "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید.",
+        "کاربران سامانه تدبیر، با انتقال به ملل تریدر  می‌توانند از امکانات پیشرفته و تجربه‌ای بهتر می‌توانند لذت ببرند.",
       image: "/Moving.png",
       tags: ["معاملات مالی", "امنیت بالا", "رابط کاربری"],
       link: "https://melaltrader.ir/migration",
@@ -84,7 +84,7 @@ export const LandingPage: React.FC = () => {
     {
       title: "ملل تریدر",
       description:
-        "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید",
+        "مشتریان فعلی ملل تریدر، به حساب خود می‌توانند وارد شوند و از ابزارهای حرفه‌ای ما استفاده کنند",
       image: "/Analysis.png",
       tags: ["تحلیل داده", "هوش مصنوعی", "پیش‌بینی"],
       link: "https://melaltrader.ir",
@@ -223,7 +223,7 @@ export const LandingPage: React.FC = () => {
                           <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
                             <div>
                               <span className="text-xs font-semibold text-gray-700">
-                                عیار
+                                گلدیس
                               </span>
                               <p className="text-xs text-gray-500">1.0845</p>
                             </div>
@@ -234,7 +234,7 @@ export const LandingPage: React.FC = () => {
                           <div className="bg-white rounded-lg p-3 shadow-sm flex justify-between items-center">
                             <div>
                               <span className="text-xs font-semibold text-gray-700">
-                                اهرم
+                                تیام
                               </span>
                               <p className="text-xs text-gray-500">1.2650</p>
                             </div>
@@ -297,7 +297,7 @@ export const LandingPage: React.FC = () => {
                 >
                   <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                   <span className="text-xs sm:text-sm font-semibold text-blue-700">
-                    پلتفرم پیشرفته معاملات مالی
+                    پروژه ها
                   </span>
                 </div>
               </div>
@@ -366,40 +366,18 @@ export const LandingPage: React.FC = () => {
                     alt={project.title}
                     className="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-xl sm:rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-2xl"
                   />
-                  {/* Floating Number Badge */}
-                  <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-xl shadow-lg">
-                    {index + 1}
-                  </div>
                 </div>
               </div>
 
               {/* Content Section */}
               <div className="flex-1 space-y-4 sm:space-y-6 w-full">
                 <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                    <span className="text-xs sm:text-sm font-semibold text-blue-600 bg-blue-50 px-3 sm:px-4 py-1 sm:py-2 rounded-full">
-                      محصول {index + 1}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-500 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                     {project.description}
                   </p>
-                </div>
-
-                {/* Features Tags */}
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 text-xs sm:text-sm rounded-full font-medium border border-gray-300 hover:from-blue-50 hover:to-purple-50 hover:border-blue-200 transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
 
                 {/* Action Button */}
@@ -447,7 +425,7 @@ export const LandingPage: React.FC = () => {
                   phase: "مرحله ۲",
                   title: "ادامه داستان شما",
                   description:
-                    "مشتریان فعلی ملل تریدر، به حساب خود وارد شوید و از ابزارهای حرفه‌ای ما استفاده کنید",
+                    "مشتریان فعلی ملل تریدر، به حساب خود می‌توانند وارد شوند و از ابزارهای حرفه‌ای ما استفاده کنند",
                   status: "completed",
                   year: "۲۰۲۳",
                 },
@@ -455,7 +433,7 @@ export const LandingPage: React.FC = () => {
                   phase: "مرحله ۳",
                   title: "فصل جدیدی با ملل تریدر",
                   description:
-                    "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر لذت ببرید",
+                    "کاربران سامانه تدبیر، با انتقال به ملل تریدر از امکانات پیشرفته و تجربه‌ای بهتر می‌توانند لذت ببرند",
                   status: "completed",
                   year: "۲۰۲۴",
                 },
@@ -534,7 +512,8 @@ export const LandingPage: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/20 hover:-translate-y-4"
+              onClick={() => window.open(project.link, "_blank")}
+              className="group relative bg-white/80 cursor-pointer backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/20 hover:-translate-y-4"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -556,16 +535,7 @@ export const LandingPage: React.FC = () => {
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-sm rounded-full font-semibold border border-blue-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+
                 <button
                   onClick={() => window.open(project.link, "_blank")}
                   className="group/btn cursor-pointer text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-300 flex items-center hover:translate-x-2"
@@ -604,20 +574,16 @@ export const LandingPage: React.FC = () => {
           <h2 className="text-3xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
             <span className=" text-emerald-500">تماس با ما</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-            ما همیشه برای همکاری در پروژه‌های معناداری که تفاوت ایجاد می‌کنند
-            هیجان‌زده هستیم. با ما در تماس باشید.
-          </p>
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 sm:mb-20">
           {[
             {
               icon: Mail,
               title: "ایمیل",
-              info: "info@chogan.ir",
-              description: "برای سوالات و همکاری",
+              info: "info@choganitd.ir",
+              description: "",
               color: "text-blue-600",
               bgColor: "bg-blue-50",
               borderColor: "border-blue-200",
@@ -625,21 +591,30 @@ export const LandingPage: React.FC = () => {
             {
               icon: MapPin,
               title: "موقعیت",
-              info: "تهران، ایران",
-              description: "دفتر مرکزی ما",
+              info: "تهران، خیابان بهشتی، خیابان قائم مقام فرهانی، پلاک 143",
+              description: "شنبه تا چهارشنبه از ساعت 8:00 الی 17",
+              color: "text-purple-600",
+              bgColor: "bg-purple-50",
+              borderColor: "border-purple-200",
+            },
+            {
+              icon: MapPin,
+              title: "تلفن",
+              info: "91071050 (021)",
+              description: "",
               color: "text-purple-600",
               bgColor: "bg-purple-50",
               borderColor: "border-purple-200",
             },
           ].map((contact, index) => (
             <div key={index} className="group">
-              <div className=" bg-white rounded-2xl py-3 sm:px-6  border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className=" bg-white rounded-2xl py-3 sm:px-6   border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="flex items-start gap-4">
                   <div
                     className={`p-3 sm:p-4 rounded-xl ${contact.bgColor} ${contact.borderColor} border group-hover:scale-110 transition-transform duration-300`}
                   >
                     <contact.icon
-                      className={`w-6 h-6 sm:w-8 sm:h-8 ${contact.color}`}
+                      className={`w-6 h-6 sm:w-4 sm:h-4 ${contact.color}`}
                     />
                   </div>
                   <div className="flex-1">
