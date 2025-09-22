@@ -507,29 +507,6 @@ export const LandingPage: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 px-4">
-          {[
-            { number: "۸+", label: "سال تجربه", icon: Briefcase },
-            { number: "۵۰+", label: "تیم چوگان", icon: Users },
-            { number: "۹۵%", label: "رضایت مشتری", icon: Award },
-          ].map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="flex justify-center mb-3 sm:mb-4">
-                <div className="p-3 sm:p-4 rounded-xl bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300">
-                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
-                </div>
-              </div>
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm sm:text-base text-gray-600 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
     </section>
   );
